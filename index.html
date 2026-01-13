@@ -19,7 +19,7 @@
     </script>
   
     <!-- Primary Meta Tags -->
-    <title>scouter - Advanced Bulk Email Outreach Tool</title>
+    <title>Scoutier - Advanced Bulk Email Outreach Tool</title>
     <meta name="description" content="Scoutier is an easy-to-use email outreach tool that helps you send personalized emails in bulk. Efficient, fast, and user-friendly.">
     <meta name="keywords" content="Scoutier, email outreach, bulk emails, send emails, email tool, email management">
     <meta name="author" content="Scoutier Team">
@@ -1461,7 +1461,7 @@
             const personalizedSubject = encodeURIComponent(personalizeContent(subjectTemplate, name));
             const personalizedBody = encodeURIComponent(personalizeContent(bodyTemplate, name));
             
-            const mailtoLink = \`mailto:${trimmedEmail}?subject=\${personalizedSubject}&body=\${personalizedBody}\`;
+            const mailtoLink = \`mailto:\${trimmedEmail}?subject=\${personalizedSubject}&body=\${personalizedBody}\`;
             const gmailWeb = \`https://mail.google.com/mail/?view=cm&to=\${encodeURIComponent(trimmedEmail)}&su=\${personalizedSubject}&body=\${personalizedBody}\`;
             const gmailApp = \`googlegmail://co?to=\${encodeURIComponent(trimmedEmail)}&subject=\${personalizedSubject}&body=\${personalizedBody}\`;
 
@@ -2131,4 +2131,4 @@
 </body>
 
 <!-- Mirrored from www.scoutier.com.ng/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Jul 2025 10:55:45 GMT -->
-</html>
+</html>s
