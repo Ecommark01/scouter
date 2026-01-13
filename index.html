@@ -949,7 +949,7 @@
 
 
       <!-- Built with Love -->
-      <p class="mt-1">Developed by <span class="font-medium text-blue-500">Vision Team</span></p>
+      <p class="mt-1">Developed by <span class="font-medium text-blue-500">Vision digital</span></p>
 
       <!-- Social Links -->
       <div class="flex justify-center items-center gap-4">
@@ -1514,28 +1514,50 @@
         const gmailWeb = result.gmailWeb;
         const gmailApp = result.gmailApp;
 
-        // Helper fallback: try app/link then fallback to mailto
-        const fallbackToMailto = () => {
-          try { window.location.href = mailto; } catch (e) { window.open(mailto, '_blank'); }
-        };
+        // Manage a cancellable fallback so we don't open two apps if the native app opens
+        let fallbackTimer = null;
+        function clearFallback() {
+          if (fallbackTimer) {
+            clearTimeout(fallbackTimer);
+            fallbackTimer = null;
+          }
+          document.removeEventListener('visibilitychange', onVisibilityChange);
+          window.removeEventListener('pagehide', clearFallback);
+          window.removeEventListener('blur', clearFallback);
+        }
+
+        function onVisibilityChange() {
+          if (document.hidden) {
+            // User left the page (native app likely opened) — cancel fallback
+            clearFallback();
+          }
+        }
+
+        function scheduleFallback() {
+          // If native app doesn't open, fallback to mailto after timeout
+          fallbackTimer = setTimeout(() => {
+            try { window.location.href = mailto; } catch (e) { window.open(mailto, '_blank'); }
+            fallbackTimer = null;
+          }, 800);
+
+          document.addEventListener('visibilitychange', onVisibilityChange);
+          window.addEventListener('pagehide', clearFallback);
+          window.addEventListener('blur', clearFallback);
+        }
 
         if (isAndroid && isChrome) {
           // Use Android Intent URI which is more reliable in Chrome on Android
           const intentUri = `intent://compose?to=${encodeURIComponent(result.email)}&subject=${result.subject}&body=${result.body}#Intent;package=com.google.android.gm;scheme=mailto;end`;
-          // Navigate to intent. If Gmail app not present Chrome will show a chooser or fallback.
           try { window.location.href = intentUri; } catch (e) { /* ignore */ }
-          setTimeout(fallbackToMailto, 800);
+          scheduleFallback();
         } else if (isIOS) {
-          // Try Gmail app scheme on iOS, then fallback to mailto or Gmail web
+          // Try Gmail app scheme on iOS, then fallback to mailto
           try { window.location.href = gmailApp; } catch (e) { /* ignore */ }
-          setTimeout(() => {
-            // Prefer mailto on iOS as a fallback
-            fallbackToMailto();
-          }, 800);
+          scheduleFallback();
         } else if (isAndroid) {
           // Non-Chrome Android browsers: try app scheme first
           try { window.location.href = gmailApp; } catch (e) { /* ignore */ }
-          setTimeout(fallbackToMailto, 800);
+          scheduleFallback();
         } else {
           // Desktop: open Gmail web compose in new tab, else mailto
           try { window.open(gmailWeb || mailto, '_blank'); } catch (e) { window.open(mailto, '_blank'); }
