@@ -19,7 +19,7 @@
     </script>
   
     <!-- Primary Meta Tags -->
-    <title>Scoutier - Advanced Bulk Email Outreach Tool</title>
+    <title>scouter - Advanced Bulk Email Outreach Tool</title>
     <meta name="description" content="Scoutier is an easy-to-use email outreach tool that helps you send personalized emails in bulk. Efficient, fast, and user-friendly.">
     <meta name="keywords" content="Scoutier, email outreach, bulk emails, send emails, email tool, email management">
     <meta name="author" content="Scoutier Team">
@@ -481,7 +481,7 @@
             <i class="ri-mail-line text-blue-600 dark:text-blue-400 text-lg"></i>
           </span>
           <h1 class="text-2xl font-bold text-blue-500 dark:text-blue-400">
-            Renew
+            Scouter
           </h1>
           <span class="md:inline-block text-xs bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300 px-2 py-0.5 rounded-full">Pro</span>
         </div>
@@ -1461,11 +1461,17 @@
             const personalizedSubject = encodeURIComponent(personalizeContent(subjectTemplate, name));
             const personalizedBody = encodeURIComponent(personalizeContent(bodyTemplate, name));
             
-            const gmailUrl = \`https://mail.google.com/mail/?view=cm&to=\${encodeURIComponent(trimmedEmail)}&su=\${personalizedSubject}&body=\${personalizedBody}\`;
+            const mailtoLink = \`mailto:${trimmedEmail}?subject=\${personalizedSubject}&body=\${personalizedBody}\`;
+            const gmailWeb = \`https://mail.google.com/mail/?view=cm&to=\${encodeURIComponent(trimmedEmail)}&su=\${personalizedSubject}&body=\${personalizedBody}\`;
+            const gmailApp = \`googlegmail://co?to=\${encodeURIComponent(trimmedEmail)}&subject=\${personalizedSubject}&body=\${personalizedBody}\`;
 
             return {
               email: trimmedEmail,
-              mailto: gmailUrl,
+              mailto: mailtoLink,
+              gmailWeb: gmailWeb,
+              gmailApp: gmailApp,
+              subject: personalizedSubject,
+              body: personalizedBody,
               index: startIndex + idx
             };
           }).filter(item => item !== null);
@@ -1496,6 +1502,32 @@
         });
         
         currentBatch++;
+      }
+
+      function openEmail(result) {
+        const ua = navigator.userAgent || '';
+        const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(ua);
+        const mailto = result.mailto;
+        const gmailWeb = result.gmailWeb;
+        const gmailApp = result.gmailApp;
+
+        if (isMobile) {
+          // Try to open Gmail app via custom URL scheme, then fallback to mailto/gmail web
+          // Set location to app scheme; if it fails, fallback after timeout
+          try {
+            window.location.href = gmailApp;
+          } catch (err) {
+            // ignore
+          }
+
+          setTimeout(() => {
+            // Fallback to mailto which will open default mail client
+            window.location.href = mailto;
+          }, 800);
+        } else {
+          // Desktop: open Gmail web compose in new tab
+          window.open(gmailWeb || mailto, '_blank');
+        }
       }
       
       worker.onmessage = function(e) {
@@ -1528,8 +1560,8 @@
               clickedEmails.add(result.email);
               localStorage.setItem('clickedEmails', JSON.stringify([...clickedEmails]));
               
-              // Open email client
-              window.open(result.mailto, '_blank');
+              // Open email client (try Gmail app on mobile first)
+              openEmail(result);
               
               // Update counters asynchronously
               requestAnimationFrame(() => {
