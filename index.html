@@ -19,7 +19,7 @@
     </script>
   
     <!-- Primary Meta Tags -->
-    <title>scouter - Advanced Bulk Email Outreach Tool</title>
+    <title>Scoutier - Advanced Bulk Email Outreach Tool</title>
     <meta name="description" content="Scoutier is an easy-to-use email outreach tool that helps you send personalized emails in bulk. Efficient, fast, and user-friendly.">
     <meta name="keywords" content="Scoutier, email outreach, bulk emails, send emails, email tool, email management">
     <meta name="author" content="Scoutier Team">
@@ -483,7 +483,7 @@
           <h1 class="text-2xl font-bold text-blue-500 dark:text-blue-400">
             Scouter
           </h1>
-          <span class="md:inline-block text-xs bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300 px-2 py-0.5 rounded-full">Elite</span>
+          <span class="md:inline-block text-xs bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300 px-2 py-0.5 rounded-full">Pro</span>
         </div>
       </div>
  
@@ -1506,27 +1506,39 @@
 
       function openEmail(result) {
         const ua = navigator.userAgent || '';
-        const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(ua);
-        const mailto = result.mailto;
+        const isAndroid = /Android/i.test(ua);
+        const isIOS = /iPhone|iPad|iPod/i.test(ua);
+        const isChrome = /Chrome/i.test(ua) && !/Edg|OPR|SamsungBrowser/i.test(ua);
+
+        const mailto = result.mailto; // already built by worker
         const gmailWeb = result.gmailWeb;
         const gmailApp = result.gmailApp;
 
-        if (isMobile) {
-          // Try to open Gmail app via custom URL scheme, then fallback to mailto/gmail web
-          // Set location to app scheme; if it fails, fallback after timeout
-          try {
-            window.location.href = gmailApp;
-          } catch (err) {
-            // ignore
-          }
+        // Helper fallback: try app/link then fallback to mailto
+        const fallbackToMailto = () => {
+          try { window.location.href = mailto; } catch (e) { window.open(mailto, '_blank'); }
+        };
 
+        if (isAndroid && isChrome) {
+          // Use Android Intent URI which is more reliable in Chrome on Android
+          const intentUri = `intent://compose?to=${encodeURIComponent(result.email)}&subject=${result.subject}&body=${result.body}#Intent;package=com.google.android.gm;scheme=mailto;end`;
+          // Navigate to intent. If Gmail app not present Chrome will show a chooser or fallback.
+          try { window.location.href = intentUri; } catch (e) { /* ignore */ }
+          setTimeout(fallbackToMailto, 800);
+        } else if (isIOS) {
+          // Try Gmail app scheme on iOS, then fallback to mailto or Gmail web
+          try { window.location.href = gmailApp; } catch (e) { /* ignore */ }
           setTimeout(() => {
-            // Fallback to mailto which will open default mail client
-            window.location.href = mailto;
+            // Prefer mailto on iOS as a fallback
+            fallbackToMailto();
           }, 800);
+        } else if (isAndroid) {
+          // Non-Chrome Android browsers: try app scheme first
+          try { window.location.href = gmailApp; } catch (e) { /* ignore */ }
+          setTimeout(fallbackToMailto, 800);
         } else {
-          // Desktop: open Gmail web compose in new tab
-          window.open(gmailWeb || mailto, '_blank');
+          // Desktop: open Gmail web compose in new tab, else mailto
+          try { window.open(gmailWeb || mailto, '_blank'); } catch (e) { window.open(mailto, '_blank'); }
         }
       }
       
@@ -2131,4 +2143,4 @@
 </body>
 
 <!-- Mirrored from www.scoutier.com.ng/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Jul 2025 10:55:45 GMT -->
-</html>s
+</html>
