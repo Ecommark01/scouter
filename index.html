@@ -578,7 +578,7 @@
               <i class="ri-send-plane-fill text-red-500"></i>
               Bulk Mail Send
             </h2>
-            <span class="text-sm text-blue-500 dark:text-blue-400 font-medium">Powered by </span>
+            <span class="text-sm text-blue-500 dark:text-blue-400 font-medium">Powered by Dynamic Sales</span>
           </div>
 
           <!-- Form for composing bulk emails -->
@@ -839,9 +839,15 @@
             </div>
           </div>
           
-          <div class="bg-white/10 rounded-lg p-3 text-center mb-4">
-            <div class="text-3xl font-bold" id="totalCounter">0</div>
-            <div class="text-xs opacity-80">Total Generated</div>
+          <div class="grid grid-cols-1 gap-4 mb-4">
+            <div class="bg-white/10 rounded-lg p-3 text-center">
+              <div class="text-3xl font-bold" id="totalCounter">0</div>
+              <div class="text-xs opacity-80">Total Generated</div>
+            </div>
+            <div class="bg-white/10 rounded-lg p-3 text-center">
+              <div class="text-2xl font-bold" id="sent24hCounter">0</div>
+              <div class="text-xs opacity-80">Sent (24h)</div>
+            </div>
           </div>
           
           <div class="h-2 bg-white/20 rounded-full overflow-hidden mb-1">
@@ -849,6 +855,12 @@
           </div>
           <div class="text-xs text-center opacity-80">
             <span id="campaignProgressText">0% Complete</span>
+          </div>
+          <div class="flex justify-center mt-3">
+            <button id="clearHistoryBtn" title="Clear sent history" class="gmail-btn-secondary py-1 px-3 text-xs rounded-md flex items-center gap-2">
+              <i class="ri-refresh-line text-red-500"></i>
+              Clear
+            </button>
           </div>
         </div>
 
@@ -945,11 +957,11 @@
   <footer class="mt-12 py-6 border-t border-gray-200 dark:border-gray-800 text-center text-sm text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800">
     <div class="container mx-auto px-4 space-y-4">
       <!-- Copyright -->
-      <p>&copy; <span id="currentYear"></span> Scouter. All rights reserved.</p>
+      <p>&copy; <span id="currentYear"></span> Scoutier. All rights reserved.</p>
 
 
       <!-- Built with Love -->
-      <p class="mt-1">Developed by <span class="font-medium text-blue-500">Dynamic Sales</span></p>
+      <p class="mt-1">Developed by <span class="font-medium text-blue-500">Vision digital</span></p>
 
       <!-- Social Links -->
       <div class="flex justify-center items-center gap-4">
@@ -1072,6 +1084,8 @@
     let clickedEmails = new Set(JSON.parse(localStorage.getItem('clickedEmails') || '[]'));
     let domainStats = {};
     let allGeneratedEmails = [];
+    // Sent history stores { email, ts } entries to compute 24h metrics
+    let sentHistory = JSON.parse(localStorage.getItem('sentHistory') || '[]');
     let isScheduled = false;
     let scheduleTimeout = null;
     let currentFilter = 'all';
@@ -1461,17 +1475,9 @@
             const personalizedSubject = encodeURIComponent(personalizeContent(subjectTemplate, name));
             const personalizedBody = encodeURIComponent(personalizeContent(bodyTemplate, name));
             
-            const mailtoLink = \`mailto:\${trimmedEmail}?subject=\${personalizedSubject}&body=\${personalizedBody}\`;
-            const gmailWeb = \`https://mail.google.com/mail/?view=cm&to=\${encodeURIComponent(trimmedEmail)}&su=\${personalizedSubject}&body=\${personalizedBody}\`;
-            const gmailApp = \`googlegmail://co?to=\${encodeURIComponent(trimmedEmail)}&subject=\${personalizedSubject}&body=\${personalizedBody}\`;
-
             return {
               email: trimmedEmail,
-              mailto: mailtoLink,
-              gmailWeb: gmailWeb,
-              gmailApp: gmailApp,
-              subject: personalizedSubject,
-              body: personalizedBody,
+              mailto: \`mailto:\${trimmedEmail}?subject=\${personalizedSubject}&body=\${personalizedBody}\`,
               index: startIndex + idx
             };
           }).filter(item => item !== null);
@@ -1503,66 +1509,6 @@
         
         currentBatch++;
       }
-
-      function openEmail(result) {
-        const ua = navigator.userAgent || '';
-        const isAndroid = /Android/i.test(ua);
-        const isIOS = /iPhone|iPad|iPod/i.test(ua);
-        const isChrome = /Chrome/i.test(ua) && !/Edg|OPR|SamsungBrowser/i.test(ua);
-
-        const mailto = result.mailto; // already built by worker
-        const gmailWeb = result.gmailWeb;
-        const gmailApp = result.gmailApp;
-
-        // Manage a cancellable fallback so we don't open two apps if the native app opens
-        let fallbackTimer = null;
-        function clearFallback() {
-          if (fallbackTimer) {
-            clearTimeout(fallbackTimer);
-            fallbackTimer = null;
-          }
-          document.removeEventListener('visibilitychange', onVisibilityChange);
-          window.removeEventListener('pagehide', clearFallback);
-          window.removeEventListener('blur', clearFallback);
-        }
-
-        function onVisibilityChange() {
-          if (document.hidden) {
-            // User left the page (native app likely opened) — cancel fallback
-            clearFallback();
-          }
-        }
-
-        function scheduleFallback() {
-          // If native app doesn't open, fallback to mailto after timeout
-          fallbackTimer = setTimeout(() => {
-            try { window.location.href = mailto; } catch (e) { window.open(mailto, '_blank'); }
-            fallbackTimer = null;
-          }, 800);
-
-          document.addEventListener('visibilitychange', onVisibilityChange);
-          window.addEventListener('pagehide', clearFallback);
-          window.addEventListener('blur', clearFallback);
-        }
-
-        if (isAndroid && isChrome) {
-          // Use Android Intent URI which is more reliable in Chrome on Android
-          const intentUri = `intent://compose?to=${encodeURIComponent(result.email)}&subject=${result.subject}&body=${result.body}#Intent;package=com.google.android.gm;scheme=mailto;end`;
-          try { window.location.href = intentUri; } catch (e) { /* ignore */ }
-          scheduleFallback();
-        } else if (isIOS) {
-          // Try Gmail app scheme on iOS, then fallback to mailto
-          try { window.location.href = gmailApp; } catch (e) { /* ignore */ }
-          scheduleFallback();
-        } else if (isAndroid) {
-          // Non-Chrome Android browsers: try app scheme first
-          try { window.location.href = gmailApp; } catch (e) { /* ignore */ }
-          scheduleFallback();
-        } else {
-          // Desktop: open Gmail web compose in new tab, else mailto
-          try { window.open(gmailWeb || mailto, '_blank'); } catch (e) { window.open(mailto, '_blank'); }
-        }
-      }
       
       worker.onmessage = function(e) {
         const results = e.data;
@@ -1593,9 +1539,19 @@
               
               clickedEmails.add(result.email);
               localStorage.setItem('clickedEmails', JSON.stringify([...clickedEmails]));
+
+              // Record sent timestamp for 24-hour metrics
+              try {
+                sentHistory = JSON.parse(localStorage.getItem('sentHistory') || '[]');
+              } catch (err) {
+                sentHistory = [];
+              }
+              sentHistory.push({ email: result.email, ts: Date.now() });
+              localStorage.setItem('sentHistory', JSON.stringify(sentHistory));
+              update24hSentCount();
               
-              // Open email client (try Gmail app on mobile first)
-              openEmail(result);
+              // Open email client
+              window.open(result.mailto, '_blank');
               
               // Update counters asynchronously
               requestAnimationFrame(() => {
@@ -1736,6 +1692,31 @@
       domainStatsContainer.innerHTML = '';
       domainStatsContainer.appendChild(fragment);
     }
+
+    // Update and prune sentHistory for 24-hour sent metric
+    function update24hSentCount() {
+      try {
+        sentHistory = JSON.parse(localStorage.getItem('sentHistory') || '[]');
+      } catch (err) {
+        sentHistory = [];
+      }
+
+      const now = Date.now();
+      const threshold = now - 24 * 60 * 60 * 1000; // 24 hours
+
+      // Keep only entries within last 24 hours
+      const recent = sentHistory.filter(item => item && item.ts && item.ts >= threshold);
+      // Persist pruned list
+      localStorage.setItem('sentHistory', JSON.stringify(recent));
+      sentHistory = recent;
+
+      // Update UI
+      const el = document.getElementById('sent24hCounter');
+      if (el) el.textContent = String(recent.length || 0);
+    }
+
+    // Periodically prune and update 24h count every minute
+    setInterval(update24hSentCount, 60 * 1000);
 
     // Optimized search with better debouncing
     function debounce(func, delay) {
@@ -1986,6 +1967,16 @@
       elements.emailActionsMenu.classList.toggle('hidden');
     });
 
+    // Wire visible clear button to the same clear history handler
+    const visibleClearBtn = document.getElementById('clearHistoryBtn');
+    if (visibleClearBtn) {
+      visibleClearBtn.addEventListener('click', function() {
+        // delegate to existing clear handler (which shows confirm)
+        const hiddenClear = document.getElementById('clearHistory');
+        if (hiddenClear) hiddenClear.click();
+      });
+    }
+
     document.addEventListener('click', function(e) {
       if (!elements.emailActionsBtn.contains(e.target) && !elements.emailActionsMenu.contains(e.target)) {
         elements.emailActionsMenu.classList.add('hidden');
@@ -1997,6 +1988,10 @@
       if (confirm('Are you sure you want to clear your sent email history?')) {
         localStorage.removeItem('clickedEmails');
         clickedEmails.clear();
+        // Also clear 24-hour sent history and reset metrics
+        localStorage.removeItem('sentHistory');
+        sentHistory = [];
+        update24hSentCount();
         
         const emailLinks = document.querySelectorAll('#generatedLinks a');
         emailLinks.forEach(link => {
@@ -2145,6 +2140,7 @@
     // Initialize everything
     updateCounters();
     updateAnalytics();
+    update24hSentCount();
     elements.recipientsInput.dispatchEvent(new Event('input'));
   </script>
 
