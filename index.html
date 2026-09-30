@@ -1,1281 +1,361 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Mirrored from www.scoutier.com.ng/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Jul 2025 10:55:41 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
-    <!-- Meta Tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BGZ0365NTS"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-BGZ0365NTS');
-    </script>
-  
-    <!-- Primary Meta Tags -->
-    <title>Scoutier - Advanced Bulk Email Outreach Tool</title>
-    <meta name="description" content="Scoutier is an easy-to-use email outreach tool that helps you send personalized emails in bulk. Efficient, fast, and user-friendly.">
-    <meta name="keywords" content="Scoutier, email outreach, bulk emails, send emails, email tool, email management">
-    <meta name="author" content="Scoutier Team">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph / Facebook Meta Tags -->
-    <meta property="og:title" content="Scoutier - Bulk Email Outreach Tool">
-    <meta property="og:description" content="Easily compose and send personalized emails in bulk with Scoutier. A tool built for fast and efficient email outreach.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.scoutier.com.ng">
-    <meta property="og:image" content="https://www.scoutier.com.ng/assets/images/scoutier-og-image.png">
-    <meta property="og:site_name" content="Scoutier">
-    
-    <!-- Twitter Cards Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Scoutier - Email Outreach Made Simple">
-    <meta name="twitter:description" content="Manage and send emails to a list of recipients easily with Scoutier, your tool for bulk email outreach.">
-    <meta name="twitter:image" content="https://www.scoutier.com.ng/assets/images/scoutier-twitter-image.png">
-    <meta name="twitter:site" content="@scoutier">
-    <meta name="twitter:creator" content="@scoutier">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="index.html">
-
-    <!-- Favicon -->
-    <link rel="icon" href="../res.cloudinary.com/dib5bkbsy/image/upload/v1732499785/icons8-mail-32_z9jaip.png" type="image/x-icon">
-
-<!-- Remixicon -->
-    <link href="../cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-
-  <!-- BR Cobane Font -->
-    <link href='https://fonts.cdnfonts.com/css/br-cobane' rel='stylesheet'>
-   
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com/"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        blue: {
-                            500: '#0ea5a4',
-                            600: '#028488'
-                        },
-                        green: {
-                            500: '#16a34a'
-                        },
-                        yellow: {
-                            500: '#f59e0b'
-                        },
-                        red: {
-                            500: '#ef4444'
-                        }
-                    },
-                    fontFamily: {
-                        ubuntu: ['Ubuntu', 'sans-serif'],
-                        lato: ['Ubuntu', 'sans-serif']
-                    }
-                }
-            }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scoutier - Advanced Bulk Email Outreach Tool</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#5b21b6',
+            accent: '#0d9488',
+            warning: '#f59e0b',
+            error: '#ef4444',
+            slatebg: '#f6f8fc'
+          }
         }
-    </script>
-    
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Scoutier",
-      "url": "https://www.scoutier.com.ng",
-      "description": "Scoutier is a bulk email outreach tool designed to help users send personalized emails efficiently to multiple recipients.",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Scoutier",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://www.scoutier.com.ng/assets/images/scoutier-logo.png"
-        }
-      },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://www.scoutier.com.ng/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
       }
     }
-    </script>
-   <style>
+  </script>
+  <style>
     :root {
-      --primary-500: #0ea5a4;
-      --primary-600: #028488;
-      --accent-500: #2563eb;
-      --accent-600: #1e40af;
-      --success-500: #16a34a;
+      --primary-500: #5b21b6;
+      --primary-600: #4c1d95;
+      --accent-500: #0d9488;
+      --accent-600: #0f766e;
       --warning-500: #f59e0b;
       --error-500: #ef4444;
-      --gray-100: #f8fafc;
-      --gray-200: #e6eef6;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
       --gray-300: #d1d5db;
       --gray-700: #374151;
-      --gray-800: #0f172a;
-      --gray-900: #0b1220;
+      --gray-800: #1f2937;
+      --gray-900: #111827;
+      --bg: #f6f8fc;
     }
-    
-    /* Base styling with optimized fonts */
+
     body {
+      margin: 0;
       font-family: 'BR Cobane', sans-serif;
-      font-size: 10px;
-      line-height: 2;
+      background: var(--bg);
       color: #202124;
-      background: linear-gradient(180deg, #f8fafc 0%, #eef6ff 100%);
     }
 
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'BR Cobane', sans-serif;
-      letter-spacing: -0.01em;
-      font-weight: 700;
-    }
-  
-    .dark-custom-bg {
-      background-color: #1a1c23;
+    .page-shell {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
-    .dark .bg-card {
-      background-color: #1a1c23;
-    }
-
-    /* Optimized scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-      height: 8px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: #f1f1f1;
-    }
-
-    .dark ::-webkit-scrollbar-track {
-      background: #252731;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #a5dbd8;
-      border-radius: 4px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: #7ec9c2;
-    }
-    
-    /* Optimized email link styles */
-    .email-link {
-      padding: 4px 6px;
-      border-radius: 4px;
-      margin-bottom: 4px;
-    }
-      
-    /* Optimized button styles */
-    .gmail-btn {
-      background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
-      color: white;
-      border-radius: 6px;
-      font-weight: 600;
-      letter-spacing: 0.25px;
-      text-transform: none;
-      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.15);
-      transition: all 0.18s ease;
-    }
-
-    .gmail-btn:hover {
-      background: linear-gradient(135deg, var(--primary-600), var(--primary-500));
-      box-shadow: 0 4px 10px rgba(2, 132, 136, 0.22);
-      transform: translateY(-1px);
-    }
-    
-    .gmail-btn:disabled {
-      background: #c7d2fe;
-      cursor: not-allowed;
-      transform: none;
-    }
-    
-    .gmail-btn-secondary {
-      background-color: white;
-      color: var(--primary-500);
-      border: 1px solid rgba(37, 99, 235, 0.12);
-      transition: all 0.15s ease;
-    }
-    
-    .gmail-btn-secondary:hover {
-      background-color: #f1f9ff;
-      border-color: var(--accent-500);
-    }
-    
-    .dark .gmail-btn-secondary {
-      background-color: #333;
-      color: #a5b4fc;
-      border-color: #5f6368;
-    }
-    
-    .dark .gmail-btn-secondary:hover {
-      background-color: #444;
-      border-color: #a5b4fc;
-    }
-    
-    /* Optimized focus effects */
-    .focus-effect:focus {
-      border-color: var(--primary-500) !important;
-      box-shadow: 0 0 0 2px rgba(14, 165, 164, 0.18);
-    }
-
-    /* Optimized theme switch */
-    .slider {
-      position: absolute;
-      cursor: pointer;
+    .topbar {
+      background: #fff;
+      border-bottom: 1px solid var(--gray-200);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+      position: sticky;
       top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #ccc;
-      transition: .1s;
-      border-radius: 34px;
+      z-index: 10;
     }
 
-    .slider:before {
-      position: absolute;
-      content: "";
-      height: 22px;
-      width: 22px;
-      left: 4px;
-      bottom: 4px;
-      background-color: white;
-      transition: .2s;
-      border-radius: 50%;
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
     }
 
-    input:checked + .slider {
-      background-color: var(--accent-500);
-    }
-
-    input:checked + .slider:before {
-      transform: translateX(30px);
-    }
-
-    #themeMenu {
-      transition: opacity 0.1s ease-in-out, visibility 0.1s ease-in-out;
-    }
-   
-    /* Optimized textarea scrollbars */
-    textarea {
-      scrollbar-width: thin;
-      scrollbar-color: #dadce0 #f8f9fa;
-    }
-
-    .dark textarea {
-      scrollbar-color: #5f6368 #202124;
-    }
-    
-    /* Optimized card styling */
-    .gmail-card {
-      background-color: white;
-      border-radius: 12px;
-      border: 1px solid rgba(15, 23, 42, 0.05);
-      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
-      transition: box-shadow 0.18s ease;
-    }
-    
-    .gmail-card:hover {
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.09);
-    }
-    
-    .dark .gmail-card {
-      background-color: #1f2430;
-      border-color: rgba(255, 255, 255, 0.08);
-    }
-
-    /* Optimized input styling */
-    .gmail-input {
-      border-radius: 6px;
-      border: 1px solid #d7e2f0;
-      padding: 10px 12px;
-      font-size: 14px;
-      transition: all 0.15s ease;
-      background: #ffffff;
-    }
-    
-    .gmail-input:focus {
-      border-color: var(--primary-500);
-      outline: none;
-      box-shadow: 0 0 0 2px rgba(14, 165, 164, 0.18);
-    }
-    
-    .dark .gmail-input {
-      border-color: #5f6368;
-      background-color: #252a38;
-      color: #e8eaed;
-    }
-    
-    .dark .gmail-input:focus {
-      border-color: #a5b4fc;
-    }
-    
-    /* Color tags */
-    .color-tag-blue {
-      background-color: var(--accent-500);
-    }
-    
-    .color-tag-green {
-      background-color: var(--success-500);
-    }
-    
-    .color-tag-yellow {
-      background-color: var(--warning-500);
-    }
-    
-    .color-tag-red {
-      background-color: var(--error-500);
-    }
-    
-    /* Optimized template chips */
-    .template-chip {
-      display: inline-flex;
-      align-items: center;
-      padding: 4px 10px;
-      background-color: #e8fbfa;
-      color: var(--primary-500);
-      border-radius: 16px;
-      font-size: 12px;
-      margin-right: 8px;
-      margin-bottom: 8px;
-      cursor: pointer;
-      transition: all 0.15s ease;
-      border: 1px solid transparent;
-    }
-    
-    .template-chip:hover {
-      background-color: #d8f7f6;
-      border-color: var(--primary-500);
-    }
-    
-    .dark .template-chip {
-      background-color: #312e81;
-      color: #a5b4fc;
-    }
-    
-    .dark .template-chip:hover {
-      background-color: #3730a3;
-      border-color: #818cf8;
-    }
-    
-    /* Optimized floating button */
-    .floating-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--primary-500), var(--accent-500));
-      color: white;
+    .brand-row {
       display: flex;
       align-items: center;
-      justify-content: center;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-      cursor: pointer;
-      transition: all 0.2s ease;
-      z-index: 100;
-      opacity: 0;
-      transform: scale(0);
+      justify-content: space-between;
+      height: 72px;
     }
-    
-    .floating-btn.visible {
-      opacity: 1;
-      transform: scale(1);
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
-    
-    .floating-btn:hover {
-      background: linear-gradient(135deg, var(--primary-600), var(--accent-600));
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-      transform: scale(1.05);
+
+    .dot-group {
+      display: flex;
+      gap: 6px;
     }
-    
-    /* Email validation indicators */
-    .validation-indicator {
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .dot.blue { background: var(--primary-500); }
+    .dot.red { background: var(--error-500); }
+    .dot.yellow { background: var(--warning-500); }
+    .dot.green { background: var(--accent-500); }
+
+    .mail-badge {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
       display: inline-flex;
       align-items: center;
-      padding: 2px 8px;
-      border-radius: 12px;
-      font-size: 12px;
-      margin-right: 8px;
-    }
-    
-    .validation-good {
-      background-color: rgba(22, 163, 74, 0.1);
-      color: var(--success-500);
-    }
-    
-    .validation-bad {
-      background-color: rgba(239, 68, 68, 0.1);
-      color: var(--error-500);
-    }
-    
-    .dark .validation-good {
-      background-color: rgba(22, 163, 74, 0.25);
-    }
-    
-    .dark .validation-bad {
-      background-color: rgba(239, 68, 68, 0.25);
+      justify-content: center;
+      background: rgba(91, 33, 182, 0.12);
+      color: var(--primary-500);
+      font-size: 18px;
     }
 
-    .file-upload-btn.dragover {
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: var(--primary-500);
+      font-weight: 700;
+    }
+
+    .pro-pill {
+      font-size: 11px;
+      background: rgba(16, 185, 129, 0.1);
+      color: #047857;
+      border-radius: 999px;
+      padding: 3px 8px;
+      font-weight: 600;
+    }
+
+    .main {
+      flex: 1;
+      padding: 30px 0 48px;
+    }
+
+    .panel {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.05);
+      border-radius: 14px;
+      box-shadow: 0 2px 12px rgba(15,23,42,0.06);
+      padding: 24px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 0 0 18px;
+      color: var(--accent-500);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 24px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--gray-700);
+    }
+
+    .input,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--gray-300);
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 14px;
+      box-sizing: border-box;
+      background: #fff;
+      color: var(--gray-800);
+      transition: 0.15s ease;
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .input:focus,
+    textarea:focus {
+      outline: none;
       border-color: var(--primary-500);
-      background-color: #effcfb;
-      box-shadow: 0 0 0 2px rgba(14, 165, 164, 0.18);
+      box-shadow: 0 0 0 3px rgba(91, 33, 182, 0.12);
     }
-    
-    /* Performance optimized animations */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    
-    .animate-fadeIn {
-      animation: fadeIn 0.2s ease forwards;
-    }
-    
-    /* Virtual scrolling optimization */
-    .email-container {
-      contain: layout style paint;
-    }
-    
-    /* GPU acceleration for smooth scrolling */
-    .smooth-scroll {
-      transform: translateZ(0);
-      will-change: transform;
-    }
-</style>
-<link rel="me" href="https://www.blogger.com/profile/03086539832299890802" />
-<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
-<meta name='google-adsense-platform-domain' content='blogspot.com'/>
 
-<script type="text/javascript" language="javascript">
-  // Supply ads personalization default for EEA readers
-  // See https://www.blogger.com/go/adspersonalization
-  adsbygoogle = window.adsbygoogle || [];
-  if (typeof adsbygoogle.requestNonPersonalizedAds === 'undefined') {
-    adsbygoogle.requestNonPersonalizedAds = 1;
-  }
-</script>
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
 
+    .chip {
+      background: #eef2ff;
+      color: var(--primary-500);
+      border: 1px solid transparent;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .chip:hover {
+      border-color: var(--primary-500);
+      background: #e0e7ff;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      padding: 12px 18px;
+      font-weight: 600;
+      transition: 0.15s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+      color: white;
+      box-shadow: 0 1px 2px rgba(60, 64, 67, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      background: linear-gradient(135deg, var(--primary-600), var(--primary-500));
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--primary-500);
+      border: 1px solid #dadce0;
+    }
+
+    .btn-secondary:hover {
+      background: #f8fafc;
+      border-color: var(--primary-500);
+    }
+
+    .stats-card {
+      background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+      color: white;
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: 0 10px 20px rgba(91, 33, 182, 0.18);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .stats-box {
+      background: rgba(255,255,255,0.12);
+      border-radius: 12px;
+      padding: 12px 10px;
+      text-align: center;
+    }
+
+    .stats-number {
+      font-size: 1.7rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .muted {
+      color: #6b7280;
+    }
+
+    .space-y-4 > * + * {
+      margin-top: 16px;
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
-
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 min-h-screen flex flex-col">
-
-  <!-- Header Section -->
-  <header class="bg-white dark:bg-gray-800 py-3 shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
-    <div class="container mx-auto flex justify-between items-center px-4 md:px-6">
-
-      <!-- Branding Section -->
-      <div class="flex items-center space-x-4">
-        <div class="flex items-center space-x-2">
-          <div class="flex space-x-1">
-            <div class="w-3 h-3 rounded-full color-tag-blue"></div>
-            <div class="w-3 h-3 rounded-full color-tag-red"></div>
-            <div class="w-3 h-3 rounded-full color-tag-yellow"></div>
-            <div class="w-3 h-3 rounded-full color-tag-green"></div>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="container brand-row">
+        <div class="brand">
+          <div class="dot-group" aria-hidden="true">
+            <span class="dot blue"></span>
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
           </div>
-          <!-- Mail Icon -->
-          <span class="bg-blue-50 dark:bg-blue-900/30 rounded-full p-2">
-            <i class="ri-mail-line text-blue-600 dark:text-blue-400 text-lg"></i>
-          </span>
-          <h1 class="text-2xl font-bold text-blue-500 dark:text-blue-400">
-            Scouter
-          </h1>
-          <span class="md:inline-block text-xs bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300 px-2 py-0.5 rounded-full">Pro</span>
+          <div class="mail-badge">✉</div>
+          <h1>Scouter</h1>
+          <span class="pro-pill">Pro</span>
         </div>
       </div>
- 
-      <!-- Social Links -->
-      <div class="flex justify-center items-center gap-4">
-        <a href="https://www.x.com/justeldev" class="text-black dark:text-gray-400 hover:text-blue-500 transition-all p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full">
-          <i class="ri-twitter-x-fill text-xl"></i>
-        </a>
-      </div>
-      
-      <!-- Stats & Theme Toggle -->
-      <div class="flex items-center space-x-4">
-        <!-- Quick Stats (Hidden on mobile) -->
-        <div class="hidden md:flex items-center space-x-6 mr-4">
-          <div class="flex items-center space-x-1">
-            <i class="ri-check-double-line text-green-500"></i>
-            <span class="text-sm"><span id="headerSentCount" class="font-medium">0</span> sent</span>
-          </div>
-          <div class="flex items-center space-x-1">
-            <i class="ri-time-line text-blue-500"></i>
-            <span class="text-sm"><span id="headerRemainingCount" class="font-medium">0</span> pending</span>
-          </div>
-        </div>
+    </header>
 
-        <!-- Theme Toggle and Dropdown -->
-        <div class="relative">
-          <!-- Dark Mode Toggle -->
-          <button id="darkModeToggle" class="text-blue-500 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700">
-            <i class="ri-moon-line ri-lg hidden" id="darkIcon"></i>
-            <i class="ri-sun-line ri-lg" id="lightIcon"></i>
-          </button>
+    <main class="main">
+      <div class="container">
+        <div class="grid">
+          <section class="panel">
+            <h2 class="section-title">Bulk Mail Send</h2>
 
-          <!-- Dropdown Menu -->
-          <ul id="themeMenu" class="absolute right-0 top-11 mt-2 w-48 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 shadow-lg rounded-lg opacity-0 invisible transition-all duration-300 z-50">
-            <li data-theme="system" class="p-3 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer rounded-t-lg flex items-center gap-2">
-              <i class="ri-device-line text-green-500"></i> System
-            </li>
-            <li data-theme="light" class="p-3 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer flex items-center gap-2">
-              <i class="ri-sun-line text-yellow-500"></i> Light
-            </li>
-            <li data-theme="dark" class="p-3 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer rounded-b-lg flex items-center gap-2">
-              <i class="ri-moon-line text-blue-500"></i> Dark
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- Main Container -->
-  <div class="container mx-auto px-4 flex-grow py-6">
-    <!-- Search Bar Section -->
-    <div id="searchSection" class="mb-6 flex justify-center">
-      <div class="relative w-full max-w-2xl">
-        <!-- Search Input -->
-        <div class="flex items-center border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden shadow-sm focus-within:ring-2 focus-within:ring-blue-500 transition-all bg-white dark:bg-gray-800">
-          <i class="ri-search-line px-4 text-gray-400 dark:text-gray-500 text-xl"></i>
-          <input 
-            type="text" 
-            id="emailSearch" 
-            placeholder="Search an email or filter by status" 
-            class="flex-1 px-3 py-3 bg-transparent focus:outline-none text-gray-700 dark:text-gray-300 focus-effect"
-          />
-          <div class="px-3 flex items-center space-x-2">
-            <span class="text-xs text-gray-500 dark:text-gray-400 hidden md:inline">Filter:</span>
-            <button id="filterAll" class="text-xs px-2 py-1 rounded bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">All</button>
-            <button id="filterSent" class="text-xs px-2 py-1 rounded bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300">Sent</button>
-            <button id="filterPending" class="text-xs px-1 py-1 rounded bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300">Pending</button>
-          </div>
-        </div>
-
-        <!-- Search Alert -->
-        <small 
-          id="searchAlert" 
-          class="hidden block mt-2 text-sm text-red-500 dark:text-red-400 text-center"
-        >
-          <i class="ri-alert-line"></i> Email not found!
-        </small>
-      </div>
-    </div>
-
-    <!-- Main Content Grid -->
-    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
-      
-      <!-- Left Column (3/4) -->
-      <div class="lg:col-span-3 space-y-6">
-        <!-- Main Tool Form -->
-        <div class="gmail-card p-6">
-          <!-- Bulk Outreach Section -->
-          <div class="flex items-center justify-between mb-6">
-            <h2 class="text-xl font-bold flex items-center gap-2 text-green-500 dark:text-gray-100">
-              <i class="ri-send-plane-fill text-red-500"></i>
-              Bulk Mail Send
-            </h2>
-            <span class="text-sm text-blue-500 dark:text-blue-400 font-medium">Powered by Dynamic Sales </span>
-          </div>
-
-          <!-- Form for composing bulk emails -->
-          <form id="emailForm" class="space-y-5">
-            <!-- Recipients Section -->
-            <div>
-              <label for="recipients" class="block text-sm font-medium flex items-center gap-2 text-gray-700 dark:text-gray-300 mb-2">
-                <i class="ri-mail-line text-blue-500"></i>
-                Recipients Email <small class="ml-2 text-xs text-gray-500 dark:text-gray-400">(Max 10,000)</small>
-              </label>
-              <textarea
-                id="recipients"
-                class="w-full gmail-input resize-none focus-effect"
-                rows="5"
-                placeholder="Enter each email on a new line"
-                required
-              ></textarea>
-              
-              <!-- Email Validation Stats -->
-              <div class="flex flex-wrap items-center mt-2 text-xs text-gray-600 dark:text-gray-400">
-                <div id="validEmailsIndicator" class="validation-indicator validation-good mr-2 mb-1">
-                  <i class="ri-checkbox-circle-line mr-1"></i>
-                  <span>Valid: <span id="validEmails" class="font-medium">0</span></span>
-                </div>
-                <div id="invalidEmailsIndicator" class="validation-indicator validation-bad mr-2 mb-1">
-                  <i class="ri-error-warning-line mr-1"></i>
-                  <span>Invalid: <span id="invalidEmails" class="font-medium">0</span></span>
-                </div>
-                <div class="mr-2 mb-1">
-                  <span>Total: <span id="totalEmails" class="font-medium">0</span></span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Subject Section -->
-            <div>
-              <label for="subject" class="block text-sm font-medium flex items-center gap-2 text-gray-700 dark:text-gray-300 mb-2">
-                <i class="ri-pencil-line text-yellow-500"></i>
-                Subject Line <small class="ml-2 text-xs text-gray-500 dark:text-gray-400">(Max 200 characters)</small>
-              </label>
-              <input
-                type="text"
-                id="subject"
-                class="w-full gmail-input focus-effect"
-                placeholder="Email Subject"
-              />
-              
-              <!-- Subject Templates -->
-              <div class="flex flex-wrap mt-2">
-                <div class="template-chip" data-target="subject" data-template="Quick question about {name}">
-                  <i class="ri-question-line mr-1"></i> Quick question
-                </div>
-                <div class="template-chip" data-target="subject" data-template="Partnership opportunity for {name}">
-                  <i class="ri-handshake-line mr-1"></i> Partnership
-                </div>
-                <div class="template-chip" data-target="subject" data-template="Exclusive offer for {name}">
-                  <i class="ri-gift-line mr-1"></i> Exclusive offer
-                </div>
-              </div>
-              
-              <div class="flex justify-end mt-1">
-                <span id="subjectCount" class="text-xs text-gray-500 dark:text-gray-400">0/200</span>
-              </div>
-            </div>
-
-            <!-- Message Body Section -->
-            <div>
-              <label for="body" class="block text-sm font-medium flex items-center gap-2 text-gray-700 dark:text-gray-300 mb-2">
-                <i class="ri-file-text-line text-green-500"></i>
-                Message Body <small class="ml-2 text-xs text-gray-500 dark:text-gray-400">(Max 2000 characters)</small>
-              </label>
-              <textarea
-                id="body"
-                class="w-full gmail-input resize-none focus-effect"
-                rows="6"
-                placeholder="Write your message here... Use {name} to personalize your messages."
-                required
-              ></textarea>
-              
-              <!-- Body Templates -->
-              <div class="flex flex-wrap mt-2">
-                <div class="template-chip" data-target="body" data-template="Hi {name},&#10;&#10;I hope this email finds you well. I wanted to reach out about...">
-                  <i class="ri-chat-1-line mr-1"></i> Basic intro
-                </div>
-                <div class="template-chip" data-target="body" data-template="Hello {name},&#10;&#10;I noticed your work on [project/company] and was impressed by...">
-                  <i class="ri-user-voice-line mr-1"></i> Personalized intro
-                </div>
-                <div class="template-chip" data-target="body" data-template="Dear {name},&#10;&#10;I'm writing to invite you to...">
-                  <i class="ri-calendar-event-line mr-1"></i> Invitation
-                </div>
-              </div>
-              
-              <div class="flex justify-between items-center mt-2">
-                <div class="text-xs text-blue-600 dark:text-blue-400 flex items-center">
-                  <i class="ri-information-line mr-1"></i>
-                  <span>Use {name} for smart personalization</span>
-                </div>
-                <span id="bodyCount" class="text-xs text-gray-500 dark:text-gray-400">0/2000</span>
-              </div>
-            </div>
-
-            <!-- Submit Button -->
-            <div class="flex gap-3">
-              <button type="submit" class="w-full gmail-btn py-3 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all flex items-center justify-center">
-                <i class="ri-send-plane-2-line"></i>
-                Generate Emails
-              </button>
-            </div>
-          </form>
-        </div>
-
-        <!-- File Upload Section -->
-        <div class="gmail-card p-6">
-          <h4 class="text-lg font-medium flex items-center gap-2 mb-3 text-green-500 dark:text-gray-100">
-            <i class="ri-upload-cloud-line text-red-500 text-xl"></i>
-            Upload CSV or TXT
-          </h4>
-
-          <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">
-            Upload a file containing email addresses. (Max. 10,000)
-          </p>
-
-          <div class="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300 bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-500 rounded-r-lg p-3 mb-5">
-            <i class="ri-lightbulb-flash-line text-lg mt-0.5 text-yellow-500"></i>
-            <p>
-              Split file list with over 10,000 emails into smaller parts to avoid lag or crashes.
-            </p>
-          </div>
-
-          <div class="flex flex-col sm:flex-row items-center gap-4">
-            <label for="csvUpload" class="cursor-pointer gmail-btn-secondary py-2 px-4 rounded-lg transition-all flex items-center gap-2 file-upload-btn w-full sm:w-auto justify-center">
-              <i class="ri-file-add-line text-blue-500"></i> Choose File
-            </label>
-            <input type="file" id="csvUpload" class="hidden" accept=".csv, .txt" />
-
-            <div id="fileName" class="text-sm truncate w-full text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-3 py-2 rounded-lg">
-              No file selected
-            </div>
-
-            <button id="uploadCSV" class="gmail-btn py-2 px-4 rounded-lg transition-all flex items-center gap-2 w-full sm:w-auto justify-center">
-              <i class="ri-upload-cloud-line"></i>
-              Upload
-            </button>
-          </div>
-        </div>
-        
-        <!-- Email Templates Section -->
-        <div class="gmail-card p-6">
-          <h4 class="text-lg font-medium flex items-center gap-2 mb-4 text-blue-500 dark:text-gray-100">
-            <i class="ri-file-list-3-line text-blue-500"></i>
-            Email Templates
-          </h4>
-          
-          <div id="templatesContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:border-blue-300 dark:hover:border-blue-700 transition-all cursor-pointer" data-template-subject="Follow-up with {name}" data-template-body="Hi {name},\n\nI hope you're doing well. I wanted to follow up on...">
-              <div class="flex justify-between items-start mb-2">
-                <h5 class="font-medium text-gray-800 dark:text-gray-200">Follow-up Email</h5>
-                <span class="text-xs bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300 px-2 py-0.5 rounded">Sales</span>
-              </div>
-              <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 line-clamp-2">A gentle follow-up email for prospects who haven't responded.</p>
-              <button class="text-xs text-blue-500 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
-                <i class="ri-add-line mr-1"></i> Use Template
-              </button>
-            </div>
-            
-            <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:border-blue-300 dark:hover:border-blue-700 transition-all cursor-pointer" data-template-subject="Special offer for {name}" data-template-body="Hi {name},\n\nI wanted to share a limited-time offer...">
-              <div class="flex justify-between items-start mb-2">
-                <h5 class="font-medium text-gray-800 dark:text-gray-200">Special Offer</h5>
-                <span class="text-xs bg-yellow-100 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-300 px-2 py-0.5 rounded">Marketing</span>
-              </div>
-              <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 line-clamp-2">A promotional email template for special offers and limited-time deals.</p>
-              <button class="text-xs text-blue-500 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
-                <i class="ri-add-line mr-1"></i> Use Template
-              </button>
-            </div>
-          </div>
-          
-          <div class="mt-4 flex justify-center">
-            <button id="addTemplateBtn" class="gmail-btn-secondary py-2 px-4 rounded-lg flex items-center gap-2">
-              <i class="ri-add-line"></i>
-              Create Custom Template
-            </button>
-          </div>
-        </div>
-        
-        <!-- Email Scheduling Section -->
-        <div class="gmail-card p-6">
-          <div class="flex items-center justify-between mb-4">
-            <h4 class="text-lg font-medium flex items-center gap-2 text-purple-500 dark:text-gray-100">
-              <i class="ri-time-line text-purple-500"></i>
-              Email Schedule
-            </h4>
-            <div class="relative">
-              <label class="inline-flex items-center cursor-pointer">
-                <input type="checkbox" id="scheduleToggle" class="sr-only peer">
-                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-500"></div>
-                <span class="ml-3 text-sm font-medium text-gray-700 dark:text-gray-300">Enable Schedule</span>
-              </label>
-            </div>
-          </div>
-          
-          <div id="schedulingOptions" class="hidden">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div class="space-y-4">
               <div>
-                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Schedule Date</label>
-                <input type="date" id="scheduleDate" class="w-full gmail-input focus-effect" min="">
+                <label class="form-label">Recipients Email</label>
+                <textarea class="input" placeholder="Enter each email on a new line"></textarea>
               </div>
+
               <div>
-                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Schedule Time</label>
-                <input type="time" id="scheduleTime" class="w-full gmail-input focus-effect">
-              </div>
-            </div>
-            
-            <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
-              <div class="flex items-start space-x-3">
-                <i class="ri-information-line text-blue-500 mt-0.5"></i>
-                <div>
-                  <p class="text-sm text-blue-700 dark:text-blue-300 font-medium">How scheduling works:</p>
-                  <ul class="text-xs text-blue-600 dark:text-blue-400 mt-1 space-y-1 list-disc list-inside">
-                    <li>Your browser must remain open for scheduled emails to send</li>
-                    <li>You'll receive a notification when emails start sending</li>
-                    <li>Scheduling is a beta feature and in development mode</li>
-                  </ul>
+                <label class="form-label">Subject Line</label>
+                <input class="input" type="text" placeholder="Email Subject" />
+                <div class="chip-row">
+                  <button class="chip" type="button">Quick question</button>
+                  <button class="chip" type="button">Partnership</button>
+                  <button class="chip" type="button">Exclusive offer</button>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Right Column (1/4) -->
-      <div class="lg:col-span-1 space-y-6">
-        <!-- Campaign Stats Card -->
-        <div class="gmail-card p-6 bg-gradient-to-br from-blue-500 to-purple-600 text-white">
-          <h3 class="text-lg font-medium flex items-center gap-2 mb-4">
-            <i class="ri-bar-chart-box-line"></i>
-            Campaign Stats
-          </h3>
-          
-          <div class="grid grid-cols-2 gap-4 mb-4">
-            <div class="bg-white/10 rounded-lg p-3 text-center">
-              <div class="text-2xl font-bold" id="sentCounter">0</div>
-              <div class="text-xs opacity-80">Sent</div>
-            </div>
-            <div class="bg-white/10 rounded-lg p-3 text-center">
-              <div class="text-2xl font-bold" id="remainingCounter">0</div>
-              <div class="text-xs opacity-80">Remaining</div>
-            </div>
-          </div>
-          
-          <div class="grid grid-cols-1 gap-4 mb-4">
-            <div class="bg-white/10 rounded-lg p-3 text-center">
-              <div class="text-3xl font-bold" id="totalCounter">0</div>
-              <div class="text-xs opacity-80">Total Generated</div>
-            </div>
-            <div class="bg-white/10 rounded-lg p-3 text-center">
-              <div class="text-2xl font-bold" id="sent24hCounter">0</div>
-              <div class="text-xs opacity-80">Sent (24h)</div>
-            </div>
-          </div>
-          
-          <div class="h-2 bg-white/20 rounded-full overflow-hidden mb-1">
-            <div id="campaignProgress" class="h-full bg-white rounded-full" style="width: 0%"></div>
-          </div>
-          <div class="text-xs text-center opacity-80">
-            <span id="campaignProgressText">0% Complete</span>
-          </div>
-          <div class="flex justify-center mt-3">
-            <button id="clearHistoryBtn" title="Clear sent history" class="gmail-btn-secondary py-1 px-3 text-xs rounded-md flex items-center gap-2">
-              <i class="ri-refresh-line text-red-500"></i>
-              Clear
-            </button>
-          </div>
-        </div>
-
-        <!-- Generated Links Section -->
-        <div class="gmail-card p-6">
-          <div id="mailtoLinks" class="hidden flex flex-col h-full">
-            <div class="flex items-center justify-between mb-3">
-              <h3 class="text-lg font-medium flex items-center gap-2 text-gray-800 dark:text-gray-100">
-                <i class="ri-links-line text-blue-500"></i>
-                Generated Emails
-              </h3>
-              
-              <div class="relative">
-                <button id="emailActionsBtn" class="p-1.5 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-                  <i class="ri-more-2-fill text-gray-500 dark:text-gray-400"></i>
-                </button>
-                <div id="emailActionsMenu" class="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 hidden z-10">
-                  <button id="copyEmails" class="w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center rounded-t-lg">
-                    <i class="ri-file-copy-line mr-2"></i> Copy All Emails
-                  </button>
-                  <button id="exportAll" class="w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center">
-                    <i class="ri-download-line mr-2"></i> Export All
-                  </button>
-                  <button id="exportRemaining" class="w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center">
-                    <i class="ri-download-line mr-2"></i> Export Remaining
-                  </button>
-                  <button id="clearHistory" class="w-full text-left px-4 py-2 text-sm text-red-600 dark:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center rounded-b-lg">
-                    <i class="ri-refresh-line mr-2"></i> Clear Sent History
-                  </button>
+              <div>
+                <label class="form-label">Message Body</label>
+                <textarea placeholder="Write your message here..."></textarea>
+                <div class="chip-row">
+                  <button class="chip" type="button">Basic intro</button>
+                  <button class="chip" type="button">Personalized intro</button>
+                  <button class="chip" type="button">Invitation</button>
                 </div>
               </div>
-            </div>
 
-            <p class="text-xs text-gray-500 dark:text-gray-400 mb-3">
-              Click an email to open your default mail app. Orange emails = already clicked.
-            </p>
-
-            <div id="generatedLinks" class="space-y-1 text-sm text-gray-800 dark:text-gray-200 email-container smooth-scroll"></div>
-          </div>
-          
-          <div id="emptyState" class="flex flex-col items-center justify-center py-8 text-center">
-            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-4">
-              <i class="ri-mail-open-line text-blue-500 text-2xl"></i>
+              <button class="btn btn-primary" type="button" style="width: 100%;">Generate Emails</button>
             </div>
-            <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">No Emails Generated</h3>
-            <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">
-              Add recipients and click "Generate Emails" to create your email links.
-            </p>
-            <button id="scrollToForm" class="text-sm text-blue-500 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
-              <i class="ri-arrow-up-line mr-1"></i> Go to Email Form
-            </button>
-          </div>
-        </div>
-        
-        <!-- Email Analytics Section -->
-        <div class="gmail-card p-6">
-          <h3 class="text-lg font-medium flex items-center gap-2 mb-4 text-gray-800 dark:text-gray-100">
-            <i class="ri-pie-chart-fill text-green-500"></i>
-            Email Analytics
-          </h3>
-          
-          <div class="space-y-4">
-            <div class="h-32 flex items-end justify-center gap-4">
-              <div class="w-16 flex flex-col items-center">
-                <div class="bg-green-500 rounded-t-lg w-full" id="sentChart" style="height: 0%"></div>
-                <div class="text-xs mt-2 text-gray-600 dark:text-gray-400">Sent</div>
+          </section>
+
+          <aside class="stats-card">
+            <h3 style="margin:0; font-size:1.1rem; font-weight:700;">Campaign Stats</h3>
+            <div class="stats-grid">
+              <div class="stats-box">
+                <div class="stats-number">0</div>
+                <div>Sent</div>
               </div>
-              <div class="w-16 flex flex-col items-center">
-                <div class="bg-blue-500 rounded-t-lg w-full" id="remainingChart" style="height: 0%"></div>
-                <div class="text-xs mt-2 text-gray-600 dark:text-gray-400">Remaining</div>
+              <div class="stats-box">
+                <div class="stats-number">0</div>
+                <div>Pending</div>
+              </div>
+              <div class="stats-box" style="grid-column: span 2;">
+                <div class="stats-number">0</div>
+                <div>Total</div>
               </div>
             </div>
-            
-            <div>
-              <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Top Email Domains</h4>
-              <div id="domainStats" class="space-y-2">
-                <div class="flex items-center justify-between text-xs">
-                  <span class="text-gray-600 dark:text-gray-400">No data available</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          </aside>
         </div>
       </div>
-    </div>
+    </main>
   </div>
-
-  <!-- Footer Section -->
-  <footer class="mt-12 py-6 border-t border-gray-200 dark:border-gray-800 text-center text-sm text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800">
-    <div class="container mx-auto px-4 space-y-4">
-      <p>&copy; <span id="currentYear"></span> Scouter. All rights reserved.</p>
-
-      <p class="mt-1">Developed by <span class="font-medium text-blue-500">Dynamic Sales</span></p>
-
-      <div class="flex justify-center items-center gap-4">
-        <a href="https://www.x.com/justeldev" class="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-all p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full">
-          <i class="ri-twitter-x-fill text-xl"></i>
-        </a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Floating Action Button -->
-  <div id="scrollTopBtn" class="floating-btn">
-    <i class="ri-arrow-up-line"></i>
-  </div>
-
-  <!-- Template Modal -->
-  <div id="templateModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
-    <div class="bg-white dark:bg-gray-800 rounded-lg w-full max-w-md p-6 shadow-xl">
-      <div class="flex justify-between items-center mb-4">
-        <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">Create Custom Template</h3>
-        <button id="closeTemplateModal" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
-          <i class="ri-close-line text-xl"></i>
-        </button>
-      </div>
-      
-      <div class="space-y-4">
-        <div>
-          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Template Name</label>
-          <input type="text" id="templateName" class="w-full gmail-input focus-effect" placeholder="e.g., Follow-up Email">
-        </div>
-        
-        <div>
-          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Subject Line</label>
-          <input type="text" id="templateSubject" class="w-full gmail-input focus-effect" placeholder="e.g., Following up with {name}">
-        </div>
-        
-        <div>
-          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Template Body</label>
-          <textarea id="templateBody" rows="5" class="w-full gmail-input focus-effect" placeholder="Hi {name}, ..."></textarea>
-        </div>
-      </div>
-
-      <div class="mt-6 flex justify-end gap-2">
-        <button id="cancelTemplateModal" class="gmail-btn-secondary px-4 py-2 rounded-lg">Cancel</button>
-        <button id="saveTemplateBtn" class="gmail-btn px-4 py-2 rounded-lg">Save Template</button>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    (function () {
-      const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-
-      const recipientsEl = document.getElementById('recipients');
-      const validEl = document.getElementById('validEmails');
-      const invalidEl = document.getElementById('invalidEmails');
-      const totalEl = document.getElementById('totalEmails');
-      const fileInput = document.getElementById('csvUpload');
-      const fileNameEl = document.getElementById('fileName');
-      const uploadBtn = document.getElementById('uploadCSV');
-      const emailActionsBtn = document.getElementById('emailActionsBtn');
-      const emailActionsMenu = document.getElementById('emailActionsMenu');
-      const copyEmailsBtn = document.getElementById('copyEmails');
-      const exportAllBtn = document.getElementById('exportAll');
-      const exportRemainingBtn = document.getElementById('exportRemaining');
-      const clearHistoryBtn = document.getElementById('clearHistory');
-      const addTemplateBtn = document.getElementById('addTemplateBtn');
-      const templateModal = document.getElementById('templateModal');
-      const closeTemplateModal = document.getElementById('closeTemplateModal');
-      const cancelTemplateModal = document.getElementById('cancelTemplateModal');
-      const saveTemplateBtn = document.getElementById('saveTemplateBtn');
-      const templateNameInput = document.getElementById('templateName');
-      const templateSubjectInput = document.getElementById('templateSubject');
-      const templateBodyInput = document.getElementById('templateBody');
-      const scrollTopBtn = document.getElementById('scrollTopBtn');
-      const scrollToFormBtn = document.getElementById('scrollToForm');
-
-      function parseEmails(text) {
-        return String(text || '')
-          .split(/[\n\r,;]+/)
-          .map(item => item.trim())
-          .filter(Boolean);
-      }
-
-      function normalizeEmail(email) {
-        return String(email || '').replace(/^["']|["']$/g, '').trim();
-      }
-
-      function dedupe(list) {
-        const seen = new Set();
-        return list.filter(item => {
-          const key = normalizeEmail(item).toLowerCase();
-          if (!key || seen.has(key)) return false;
-          seen.add(key);
-          return true;
-        });
-      }
-
-      function updateStats(list) {
-        const cleanList = dedupe(parseEmails(list));
-        const valid = cleanList.filter(item => EMAIL_RE.test(item)).length;
-        const invalid = cleanList.length - valid;
-        totalEl.textContent = cleanList.length;
-        validEl.textContent = valid;
-        invalidEl.textContent = invalid;
-
-        const headerSent = document.getElementById('headerSentCount');
-        const headerRemaining = document.getElementById('headerRemainingCount');
-        if (headerSent) headerSent.textContent = valid;
-        if (headerRemaining) headerRemaining.textContent = invalid;
-      }
-
-      recipientsEl.addEventListener('input', () => {
-        updateStats(recipientsEl.value);
-      });
-
-      fileInput.addEventListener('change', () => {
-        const file = fileInput.files && fileInput.files[0];
-        if (file) fileNameEl.textContent = file.name;
-      });
-
-      const uploadLabel = document.querySelector('.file-upload-btn');
-      if (uploadLabel) {
-        uploadLabel.addEventListener('dragover', (e) => {
-          e.preventDefault();
-          uploadLabel.classList.add('dragover');
-        });
-        uploadLabel.addEventListener('dragleave', () => uploadLabel.classList.remove('dragover'));
-        uploadLabel.addEventListener('drop', (e) => {
-          e.preventDefault();
-          uploadLabel.classList.remove('dragover');
-          const file = e.dataTransfer.files && e.dataTransfer.files[0];
-          if (!file) return;
-          fileInput.files = e.dataTransfer.files;
-          fileNameEl.textContent = file.name;
-        });
-      }
-
-      uploadBtn.addEventListener('click', () => {
-        const file = fileInput.files && fileInput.files[0];
-        if (!file) {
-          alert('Please choose a CSV or TXT file first.');
-          return;
-        }
-
-        const reader = new FileReader();
-        reader.onload = function () {
-          const text = String(reader.result || '');
-          const matches = parseEmails(text).filter(item => item.includes('@'));
-          const cleaned = dedupe(matches.map(normalizeEmail));
-          recipientsEl.value = cleaned.join('\n');
-          updateStats(recipientsEl.value);
-          recipientsEl.focus();
-        };
-        reader.readAsText(file);
-      });
-
-      function downloadCSV(filename, rows) {
-        const csv = rows.join('\n');
-        const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = filename;
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        URL.revokeObjectURL(url);
-      }
-
-      function getRecipientRows() {
-        return dedupe(parseEmails(recipientsEl.value).map(normalizeEmail).filter(Boolean));
-      }
-
-      if (copyEmailsBtn) {
-        copyEmailsBtn.addEventListener('click', async () => {
-          const data = getRecipientRows().join('\n');
-          try {
-            await navigator.clipboard.writeText(data);
-            alert('Email list copied to clipboard.');
-          } catch (error) {
-            alert('Clipboard access was blocked. Please copy manually.');
-          }
-        });
-      }
-
-      if (exportAllBtn) {
-        exportAllBtn.addEventListener('click', () => {
-          const rows = getRecipientRows();
-          if (!rows.length) {
-            alert('No emails available to export.');
-            return;
-          }
-          downloadCSV('scouter-all-emails.csv', rows);
-        });
-      }
-
-      if (exportRemainingBtn) {
-        exportRemainingBtn.addEventListener('click', () => {
-          const rows = getRecipientRows().filter(item => !EMAIL_RE.test(item));
-          if (!rows.length) {
-            alert('No remaining invalid emails to export.');
-            return;
-          }
-          downloadCSV('scouter-remaining-emails.csv', rows);
-        });
-      }
-
-      if (clearHistoryBtn) {
-        clearHistoryBtn.addEventListener('click', () => {
-          const confirmed = window.confirm('Clear the current email list and history?');
-          if (confirmed) {
-            recipientsEl.value = '';
-            updateStats('');
-          }
-        });
-      }
-
-      function openTemplateModal() {
-        templateModal.classList.remove('hidden');
-      }
-
-      function closeTemplateModalFn() {
-        templateModal.classList.add('hidden');
-        templateNameInput.value = '';
-        templateSubjectInput.value = '';
-        templateBodyInput.value = '';
-      }
-
-      if (addTemplateBtn) {
-        addTemplateBtn.addEventListener('click', openTemplateModal);
-      }
-      if (closeTemplateModal) closeTemplateModal.addEventListener('click', closeTemplateModalFn);
-      if (cancelTemplateModal) cancelTemplateModal.addEventListener('click', closeTemplateModalFn);
-
-      function saveCustomTemplate() {
-        const name = templateNameInput.value.trim();
-        const subject = templateSubjectInput.value.trim();
-        const body = templateBodyInput.value.trim();
-
-        if (!name || !subject || !body) {
-          alert('Please complete the template name, subject, and body before saving.');
-          return;
-        }
-
-        const key = 'scouter-custom-templates';
-        try {
-          const existing = JSON.parse(localStorage.getItem(key) || '[]');
-          existing.push({ id: Date.now(), name, subject, body });
-          localStorage.setItem(key, JSON.stringify(existing));
-          closeTemplateModalFn();
-          alert('Template saved locally.');
-        } catch (error) {
-          alert('Could not save template in this browser.');
-        }
-      }
-
-      if (saveTemplateBtn) saveTemplateBtn.addEventListener('click', saveCustomTemplate);
-
-      if (emailActionsBtn && emailActionsMenu) {
-        emailActionsBtn.addEventListener('click', () => {
-          emailActionsMenu.classList.toggle('hidden');
-        });
-
-        document.addEventListener('click', (event) => {
-          if (!emailActionsBtn.contains(event.target) && !emailActionsMenu.contains(event.target)) {
-            emailActionsMenu.classList.add('hidden');
-          }
-        });
-      }
-
-      function addPreviewButton() {
-        const form = document.getElementById('emailForm');
-        if (!form) return;
-
-        const previewButton = document.createElement('button');
-        previewButton.type = 'button';
-        previewButton.className = 'gmail-btn-secondary py-3 px-6 rounded-lg transition-all flex items-center justify-center';
-        previewButton.innerHTML = '<i class="ri-eye-line mr-2"></i>Preview';
-        previewButton.addEventListener('click', () => {
-          const rows = getRecipientRows();
-          const target = rows.find(item => EMAIL_RE.test(item));
-          if (!target) {
-            alert('Add at least one valid email to preview the message.');
-            return;
-          }
-
-          const subject = document.getElementById('subject')?.value || '';
-          const body = document.getElementById('body')?.value || '';
-          const mailtoUrl = `mailto:${encodeURIComponent(target)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-          window.open(mailtoUrl, '_blank');
-        });
-
-        const submitButton = form.querySelector('button[type="submit"]');
-        if (submitButton) {
-          submitButton.parentNode.appendChild(previewButton);
-        }
-      }
-      addPreviewButton();
-
-      if (scrollTopBtn) {
-        window.addEventListener('scroll', () => {
-          if (window.scrollY > 200) {
-            scrollTopBtn.classList.add('visible');
-          } else {
-            scrollTopBtn.classList.remove('visible');
-          }
-        });
-
-        scrollTopBtn.addEventListener('click', () => {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-      }
-
-      if (scrollToFormBtn) {
-        scrollToFormBtn.addEventListener('click', () => {
-          document.getElementById('emailForm').scrollIntoView({ behavior: 'smooth', block: 'center' });
-        });
-      }
-
-      document.getElementById('currentYear').textContent = new Date().getFullYear();
-      updateStats(recipientsEl.value);
-    })();
-  </script>
 </body>
 </html>
