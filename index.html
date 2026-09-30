@@ -62,17 +62,17 @@
                 extend: {
                     colors: {
                         blue: {
-                            500: '#1a73e8',
-                            600: '#0d62d0'
+                            500: '#0ea5a4',
+                            600: '#028488'
                         },
                         green: {
-                            500: '#34a853'
+                            500: '#16a34a'
                         },
                         yellow: {
-                            500: '#fbbc05'
+                            500: '#f59e0b'
                         },
                         red: {
-                            500: '#ea4335'
+                            500: '#ef4444'
                         }
                     },
                     fontFamily: {
@@ -84,8 +84,6 @@
         }
     </script>
     
-    
-                
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
@@ -111,16 +109,19 @@
     </script>
    <style>
     :root {
-      --primary-500: #5b21b6;       /* Indigo-700 */
-      --accent-500: #0d9488;        /* Teal-600 */
-      --warning-500: #f59e0b;       /* Amber-500 */
-      --error-500: #ef4444;         /* Red-500 */
-      --gray-100: #f3f4f6;          /* Light gray */
-      --gray-200: #e5e7eb;
+      --primary-500: #0ea5a4;
+      --primary-600: #028488;
+      --accent-500: #2563eb;
+      --accent-600: #1e40af;
+      --success-500: #16a34a;
+      --warning-500: #f59e0b;
+      --error-500: #ef4444;
+      --gray-100: #f8fafc;
+      --gray-200: #e6eef6;
       --gray-300: #d1d5db;
       --gray-700: #374151;
-      --gray-800: #1f2937;
-      --gray-900: #111827;
+      --gray-800: #0f172a;
+      --gray-900: #0b1220;
     }
     
     /* Base styling with optimized fonts */
@@ -129,7 +130,7 @@
       font-size: 10px;
       line-height: 2;
       color: #202124;
-      background-color: #f6f8fc;
+      background: linear-gradient(180deg, #f8fafc 0%, #eef6ff 100%);
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -161,12 +162,12 @@
     }
 
     ::-webkit-scrollbar-thumb {
-      background: #c7d2fe;  /* Indigo-200 */
+      background: #a5dbd8;
       border-radius: 4px;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-      background: #a5b4fc;  /* Indigo-400 */
+      background: #7ec9c2;
     }
     
     /* Optimized email link styles */
@@ -178,53 +179,55 @@
       
     /* Optimized button styles */
     .gmail-btn {
-      background-color: var(--primary-500); /* Indigo */
+      background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
       color: white;
-      border-radius: 4px;
-      font-weight: 500;
+      border-radius: 6px;
+      font-weight: 600;
       letter-spacing: 0.25px;
       text-transform: none;
-      box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3);
-      transition: all 0.1s ease;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.15);
+      transition: all 0.18s ease;
     }
 
     .gmail-btn:hover {
-      background-color: #4c1d95; /* Darker indigo */
-      box-shadow: 0 1px 3px rgba(60, 64, 67, 0.4);
+      background: linear-gradient(135deg, var(--primary-600), var(--primary-500));
+      box-shadow: 0 4px 10px rgba(2, 132, 136, 0.22);
+      transform: translateY(-1px);
     }
     
     .gmail-btn:disabled {
-      background-color: #c7d2fe; /* Indigo-100 */
+      background: #c7d2fe;
       cursor: not-allowed;
+      transform: none;
     }
     
     .gmail-btn-secondary {
       background-color: white;
-      color: var(--primary-500); /* Indigo */
-      border: 1px solid #dadce0;
-      transition: all 0.1s ease;
+      color: var(--primary-500);
+      border: 1px solid rgba(37, 99, 235, 0.12);
+      transition: all 0.15s ease;
     }
     
     .gmail-btn-secondary:hover {
-      background-color: #f5f7fa;
-      border-color: var(--primary-500); /* Indigo */
+      background-color: #f1f9ff;
+      border-color: var(--accent-500);
     }
     
     .dark .gmail-btn-secondary {
       background-color: #333;
-      color: #a78bfa; /* Indigo-300 */
+      color: #a5b4fc;
       border-color: #5f6368;
     }
     
     .dark .gmail-btn-secondary:hover {
       background-color: #444;
-      border-color: #a78bfa;
+      border-color: #a5b4fc;
     }
     
     /* Optimized focus effects */
     .focus-effect:focus {
-      border-color: var(--primary-500) !important; /* Indigo */
-      box-shadow: 0 0 0 2px rgba(91, 33, 182, 0.2);
+      border-color: var(--primary-500) !important;
+      box-shadow: 0 0 0 2px rgba(14, 165, 164, 0.18);
     }
 
     /* Optimized theme switch */
@@ -253,7 +256,7 @@
     }
 
     input:checked + .slider {
-      background-color: var(--accent-500); /* Teal */
+      background-color: var(--accent-500);
     }
 
     input:checked + .slider:before {
@@ -277,14 +280,14 @@
     /* Optimized card styling */
     .gmail-card {
       background-color: white;
-      border-radius: 8px;
-      border: 1px solid rgba(0, 0, 0, 0.05);
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-      transition: box-shadow 0.1s ease;
+      border-radius: 12px;
+      border: 1px solid rgba(15, 23, 42, 0.05);
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+      transition: box-shadow 0.18s ease;
     }
     
     .gmail-card:hover {
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.09);
     }
     
     .dark .gmail-card {
@@ -294,17 +297,18 @@
 
     /* Optimized input styling */
     .gmail-input {
-      border-radius: 4px;
-      border: 1px solid #dadce0;
-      padding: 8px 12px;
+      border-radius: 6px;
+      border: 1px solid #d7e2f0;
+      padding: 10px 12px;
       font-size: 14px;
-      transition: all 0.1s ease;
+      transition: all 0.15s ease;
+      background: #ffffff;
     }
     
     .gmail-input:focus {
-      border-color: var(--primary-500); /* Indigo */
+      border-color: var(--primary-500);
       outline: none;
-      box-shadow: 0 0 0 2px rgba(91, 33, 182, 0.2);
+      box-shadow: 0 0 0 2px rgba(14, 165, 164, 0.18);
     }
     
     .dark .gmail-input {
@@ -314,24 +318,24 @@
     }
     
     .dark .gmail-input:focus {
-      border-color: #a78bfa; /* Indigo-300 */
+      border-color: #a5b4fc;
     }
     
     /* Color tags */
     .color-tag-blue {
-      background-color: var(--primary-500); /* Indigo */
+      background-color: var(--accent-500);
     }
     
     .color-tag-green {
-      background-color: var(--accent-500); /* Teal */
+      background-color: var(--success-500);
     }
     
     .color-tag-yellow {
-      background-color: var(--warning-500); /* Amber */
+      background-color: var(--warning-500);
     }
     
     .color-tag-red {
-      background-color: var(--error-500); /* Red */
+      background-color: var(--error-500);
     }
     
     /* Optimized template chips */
@@ -339,30 +343,30 @@
       display: inline-flex;
       align-items: center;
       padding: 4px 10px;
-      background-color: #eef2ff; /* Indigo-50 */
-      color: var(--primary-500); /* Indigo */
+      background-color: #e8fbfa;
+      color: var(--primary-500);
       border-radius: 16px;
       font-size: 12px;
       margin-right: 8px;
       margin-bottom: 8px;
       cursor: pointer;
-      transition: all 0.1s ease;
+      transition: all 0.15s ease;
       border: 1px solid transparent;
     }
     
     .template-chip:hover {
-      background-color: #e0e7ff; /* Indigo-100 */
-      border-color: var(--primary-500); /* Indigo */
+      background-color: #d8f7f6;
+      border-color: var(--primary-500);
     }
     
     .dark .template-chip {
-      background-color: #312e81; /* Indigo-900 */
-      color: #a5b4fc; /* Indigo-300 */
+      background-color: #312e81;
+      color: #a5b4fc;
     }
     
     .dark .template-chip:hover {
-      background-color: #3730a3; /* Indigo-800 */
-      border-color: #818cf8; /* Indigo-400 */
+      background-color: #3730a3;
+      border-color: #818cf8;
     }
     
     /* Optimized floating button */
@@ -373,7 +377,7 @@
       width: 50px;
       height: 50px;
       border-radius: 50%;
-      background-color: var(--accent-500); /* Teal */
+      background: linear-gradient(135deg, var(--primary-500), var(--accent-500));
       color: white;
       display: flex;
       align-items: center;
@@ -392,7 +396,7 @@
     }
     
     .floating-btn:hover {
-      background-color: #0f766e; /* Darker teal */
+      background: linear-gradient(135deg, var(--primary-600), var(--accent-600));
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       transform: scale(1.05);
     }
@@ -408,21 +412,27 @@
     }
     
     .validation-good {
-      background-color: rgba(13, 148, 136, 0.1);
-      color: var(--accent-500); /* Teal */
+      background-color: rgba(22, 163, 74, 0.1);
+      color: var(--success-500);
     }
     
     .validation-bad {
       background-color: rgba(239, 68, 68, 0.1);
-      color: var(--error-500); /* Red */
+      color: var(--error-500);
     }
     
     .dark .validation-good {
-      background-color: rgba(13, 148, 136, 0.25);
+      background-color: rgba(22, 163, 74, 0.25);
     }
     
     .dark .validation-bad {
       background-color: rgba(239, 68, 68, 0.25);
+    }
+
+    .file-upload-btn.dragover {
+      border-color: var(--primary-500);
+      background-color: #effcfb;
+      box-shadow: 0 0 0 2px rgba(14, 165, 164, 0.18);
     }
     
     /* Performance optimized animations */
@@ -517,7 +527,7 @@
           </button>
 
           <!-- Dropdown Menu -->
-          <ul id="themeMenu" class="absolute right-0 top-11 mt-2 w-48 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 shadow-lg rounded-lg opacity-0 invisible transition-all duration-300 z-50 border border-gray-200 dark:border-gray-700">
+          <ul id="themeMenu" class="absolute right-0 top-11 mt-2 w-48 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 shadow-lg rounded-lg opacity-0 invisible transition-all duration-300 z-50">
             <li data-theme="system" class="p-3 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer rounded-t-lg flex items-center gap-2">
               <i class="ri-device-line text-green-500"></i> System
             </li>
@@ -681,10 +691,12 @@
             </div>
 
             <!-- Submit Button -->
-            <button type="submit" class="w-full gmail-btn py-3 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all flex items-center justify-center gap-2">
-              <i class="ri-send-plane-2-line"></i>
-              Generate Emails
-            </button>
+            <div class="flex gap-3">
+              <button type="submit" class="w-full gmail-btn py-3 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all flex items-center justify-center">
+                <i class="ri-send-plane-2-line"></i>
+                Generate Emails
+              </button>
+            </div>
           </form>
         </div>
 
@@ -706,27 +718,17 @@
             </p>
           </div>
 
-          <!-- Upload Controls -->
           <div class="flex flex-col sm:flex-row items-center gap-4">
-            <!-- File Selector -->
-            <label
-              for="csvUpload"
-              class="cursor-pointer gmail-btn-secondary py-2 px-4 rounded-lg transition-all flex items-center gap-2 file-upload-btn w-full sm:w-auto justify-center" 
-            >
+            <label for="csvUpload" class="cursor-pointer gmail-btn-secondary py-2 px-4 rounded-lg transition-all flex items-center gap-2 file-upload-btn w-full sm:w-auto justify-center">
               <i class="ri-file-add-line text-blue-500"></i> Choose File
             </label>
             <input type="file" id="csvUpload" class="hidden" accept=".csv, .txt" />
 
-            <!-- File Name Display -->
             <div id="fileName" class="text-sm truncate w-full text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-3 py-2 rounded-lg">
               No file selected
             </div>
 
-            <!-- Upload Button -->
-            <button
-              id="uploadCSV"
-              class="gmail-btn py-2 px-4 rounded-lg transition-all flex items-center gap-2 w-full sm:w-auto justify-center"
-            >
+            <button id="uploadCSV" class="gmail-btn py-2 px-4 rounded-lg transition-all flex items-center gap-2 w-full sm:w-auto justify-center">
               <i class="ri-upload-cloud-line"></i>
               Upload
             </button>
@@ -741,8 +743,7 @@
           </h4>
           
           <div id="templatesContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <!-- Default Templates -->
-            <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:border-blue-300 dark:hover:border-blue-700 transition-all cursor-pointer" data-template-subject="Follow-up with {name}" data-template-body="Hello {name},&#10;&#10;I hope you're doing well. I'm following up on our previous conversation about [topic].&#10;&#10;I wanted to check if you've had a chance to review the information I sent and if you have any questions I can answer.&#10;&#10;Looking forward to your response.&#10;&#10;Best regards,&#10;[Your Name]">
+            <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:border-blue-300 dark:hover:border-blue-700 transition-all cursor-pointer" data-template-subject="Follow-up with {name}" data-template-body="Hi {name},\n\nI hope you're doing well. I wanted to follow up on...">
               <div class="flex justify-between items-start mb-2">
                 <h5 class="font-medium text-gray-800 dark:text-gray-200">Follow-up Email</h5>
                 <span class="text-xs bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300 px-2 py-0.5 rounded">Sales</span>
@@ -753,7 +754,7 @@
               </button>
             </div>
             
-            <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:border-blue-300 dark:hover:border-blue-700 transition-all cursor-pointer" data-template-subject="Special offer for {name}" data-template-body="Dear {name},&#10;&#10;I'm excited to share an exclusive offer with you!&#10;&#10;For a limited time, we're offering [specific offer details] to our valued contacts.&#10;&#10;To take advantage of this special offer, simply [action step].&#10;&#10;This offer expires on [date], so don't miss out!&#10;&#10;Best regards,&#10;[Your Name]">
+            <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:border-blue-300 dark:hover:border-blue-700 transition-all cursor-pointer" data-template-subject="Special offer for {name}" data-template-body="Hi {name},\n\nI wanted to share a limited-time offer...">
               <div class="flex justify-between items-start mb-2">
                 <h5 class="font-medium text-gray-800 dark:text-gray-200">Special Offer</h5>
                 <span class="text-xs bg-yellow-100 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-300 px-2 py-0.5 rounded">Marketing</span>
@@ -765,7 +766,6 @@
             </div>
           </div>
           
-          <!-- Add Custom Template Button -->
           <div class="mt-4 flex justify-center">
             <button id="addTemplateBtn" class="gmail-btn-secondary py-2 px-4 rounded-lg flex items-center gap-2">
               <i class="ri-add-line"></i>
@@ -784,7 +784,7 @@
             <div class="relative">
               <label class="inline-flex items-center cursor-pointer">
                 <input type="checkbox" id="scheduleToggle" class="sr-only peer">
-                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-500"></div>
                 <span class="ml-3 text-sm font-medium text-gray-700 dark:text-gray-300">Enable Schedule</span>
               </label>
             </div>
@@ -873,7 +873,6 @@
                 Generated Emails
               </h3>
               
-              <!-- Action Buttons Dropdown -->
               <div class="relative">
                 <button id="emailActionsBtn" class="p-1.5 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
                   <i class="ri-more-2-fill text-gray-500 dark:text-gray-400"></i>
@@ -899,11 +898,9 @@
               Click an email to open your default mail app. Orange emails = already clicked.
             </p>
 
-            <!-- Generated Links Container with Virtual Scrolling -->
             <div id="generatedLinks" class="space-y-1 text-sm text-gray-800 dark:text-gray-200 email-container smooth-scroll"></div>
           </div>
           
-          <!-- Empty State -->
           <div id="emptyState" class="flex flex-col items-center justify-center py-8 text-center">
             <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-4">
               <i class="ri-mail-open-line text-blue-500 text-2xl"></i>
@@ -926,7 +923,6 @@
           </h3>
           
           <div class="space-y-4">
-            <!-- Sent vs Remaining Chart -->
             <div class="h-32 flex items-end justify-center gap-4">
               <div class="w-16 flex flex-col items-center">
                 <div class="bg-green-500 rounded-t-lg w-full" id="sentChart" style="height: 0%"></div>
@@ -938,7 +934,6 @@
               </div>
             </div>
             
-            <!-- Email Domain Stats -->
             <div>
               <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Top Email Domains</h4>
               <div id="domainStats" class="space-y-2">
@@ -956,14 +951,10 @@
   <!-- Footer Section -->
   <footer class="mt-12 py-6 border-t border-gray-200 dark:border-gray-800 text-center text-sm text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800">
     <div class="container mx-auto px-4 space-y-4">
-      <!-- Copyright -->
       <p>&copy; <span id="currentYear"></span> Scouter. All rights reserved.</p>
 
-
-      <!-- Built with Love -->
       <p class="mt-1">Developed by <span class="font-medium text-blue-500">Dynamic Sales</span></p>
 
-      <!-- Social Links -->
       <div class="flex justify-center items-center gap-4">
         <a href="https://www.x.com/justeldev" class="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-all p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full">
           <i class="ri-twitter-x-fill text-xl"></i>
@@ -999,1233 +990,292 @@
         </div>
         
         <div>
-          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email Body</label>
-          <textarea id="templateBody" class="w-full gmail-input resize-none focus-effect" rows="6" placeholder="e.g., Hi {name},&#10;&#10;I hope this email finds you well..."></textarea>
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Template Body</label>
+          <textarea id="templateBody" rows="5" class="w-full gmail-input focus-effect" placeholder="Hi {name}, ..."></textarea>
         </div>
-        
-        <div>
-          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Category</label>
-          <select id="templateCategory" class="w-full gmail-input focus-effect">
-            <option value="business">Business</option>
-            <option value="sales">Sales</option>
-            <option value="marketing">Marketing</option>
-            <option value="relationship">Relationship</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-        
-        <button id="saveTemplate" class="w-full gmail-btn py-2 px-4 rounded-lg flex items-center justify-center gap-2">
-          <i class="ri-save-line"></i>
-          Save Template
-        </button>
+      </div>
+
+      <div class="mt-6 flex justify-end gap-2">
+        <button id="cancelTemplateModal" class="gmail-btn-secondary px-4 py-2 rounded-lg">Cancel</button>
+        <button id="saveTemplateBtn" class="gmail-btn px-4 py-2 rounded-lg">Save Template</button>
       </div>
     </div>
   </div>
 
-  <script src="../cdn.jsdelivr.net/npm/canvas-confetti%401.5.1/dist/confetti.browser.min.js"></script>
-  
   <script>
-    // Performance optimized JavaScript
-    document.getElementById("currentYear").textContent = new Date().getFullYear();
+    (function () {
+      const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 
-    // Cached DOM Elements for better performance
-    const elements = {
-      recipientsInput: document.getElementById('recipients'),
-      subjectInput: document.getElementById('subject'),
-      bodyInput: document.getElementById('body'),
-      subjectCount: document.getElementById('subjectCount'),
-      bodyCount: document.getElementById('bodyCount'),
-      emailForm: document.getElementById('emailForm'),
-      mailtoLinks: document.getElementById('mailtoLinks'),
-      emptyState: document.getElementById('emptyState'),
-      emailSearch: document.getElementById('emailSearch'),
-      searchAlert: document.getElementById('searchAlert'),
-      scrollTopBtn: document.getElementById('scrollTopBtn'),
-      emailActionsBtn: document.getElementById('emailActionsBtn'),
-      emailActionsMenu: document.getElementById('emailActionsMenu'),
-      scheduleToggle: document.getElementById('scheduleToggle'),
-      schedulingOptions: document.getElementById('schedulingOptions'),
-      scheduleDate: document.getElementById('scheduleDate'),
-      scheduleTime: document.getElementById('scheduleTime'),
-      templateModal: document.getElementById('templateModal'),
-      addTemplateBtn: document.getElementById('addTemplateBtn'),
-      closeTemplateModal: document.getElementById('closeTemplateModal'),
-      saveTemplate: document.getElementById('saveTemplate'),
-      filterAll: document.getElementById('filterAll'),
-      filterSent: document.getElementById('filterSent'),
-      filterPending: document.getElementById('filterPending'),
-      templatesContainer: document.getElementById('templatesContainer')
-    };
-
-    // Performance optimized data storage
-    let emailData = {
-      recipients: localStorage.getItem('recipients') || '',
-      subject: localStorage.getItem('subject') || '',
-      body: localStorage.getItem('body') || ''
-    };
-
-    // Set initial values
-    elements.recipientsInput.value = emailData.recipients;
-    elements.subjectInput.value = emailData.subject;
-    elements.bodyInput.value = emailData.body;
-
-    // Set scheduling defaults
-    const today = new Date().toISOString().split('T')[0];
-    elements.scheduleDate.min = today;
-    elements.scheduleDate.value = today;
-    
-    const now = new Date();
-    now.setHours(now.getHours() + 1);
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    elements.scheduleTime.value = `${hours}:${minutes}`;
-
-    // Global variables with performance optimization
-    let clickedEmails = new Set(JSON.parse(localStorage.getItem('clickedEmails') || '[]'));
-    let domainStats = {};
-    let allGeneratedEmails = [];
-    // Sent history for 24-hour metric: array of { email, ts }
-    let sentHistory = JSON.parse(localStorage.getItem('sentHistory') || '[]');
-    let isScheduled = false;
-    let scheduleTimeout = null;
-    let currentFilter = 'all';
-
-    // Optimized character count function
-    function updateCharacterCount() {
-      const subjectLength = elements.subjectInput.value.length;
-      const bodyLength = elements.bodyInput.value.length;
-
-      elements.subjectCount.innerText = `${subjectLength}/200`;
-      elements.bodyCount.innerText = `${bodyLength}/2000`;
-
-      if (subjectLength > 200) elements.subjectInput.value = elements.subjectInput.value.slice(0, 200);
-      if (bodyLength > 2000) elements.bodyInput.value = elements.bodyInput.value.slice(0, 2000);
-    }
-
-    elements.subjectInput.addEventListener('input', updateCharacterCount);
-    elements.bodyInput.addEventListener('input', updateCharacterCount);
-    updateCharacterCount();
-
-    // Optimized email validation
-    function isValidEmail(email) {
-      const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-      return emailRegex.test(email);
-    }
-
-    // Throttled email validation for better performance
-    let validationTimeout;
-    elements.recipientsInput.addEventListener('input', function () {
-      clearTimeout(validationTimeout);
-      validationTimeout = setTimeout(() => {
-        const emails = this.value.split('\n');
-        let validEmailsCount = 0;
-        let invalidEmailsCount = 0;
-
-        emails.forEach(email => {
-          email = email.trim();
-          if (email && isValidEmail(email)) {
-            validEmailsCount++;
-          } else if (email) {
-            invalidEmailsCount++;
-          }
-        });
-
-        document.getElementById('invalidEmails').innerText = invalidEmailsCount;
-        document.getElementById('validEmails').innerText = validEmailsCount;
-        document.getElementById('totalEmails').innerText = emails.filter(email => email.trim()).length;
-        
-        const validIndicator = document.getElementById('validEmailsIndicator');
-        const invalidIndicator = document.getElementById('invalidEmailsIndicator');
-        
-        validIndicator.classList.toggle('hidden', validEmailsCount === 0);
-        invalidIndicator.classList.toggle('hidden', invalidEmailsCount === 0);
-      }, 300);
-    });
-
-    // Optimized auto-save with throttling
-    let saveTimeout;
-    function autoSave() {
-      clearTimeout(saveTimeout);
-      saveTimeout = setTimeout(() => {
-        localStorage.setItem('recipients', elements.recipientsInput.value);
-        localStorage.setItem('subject', elements.subjectInput.value);
-        localStorage.setItem('body', elements.bodyInput.value);
-      }, 5000);
-    }
-
-    elements.recipientsInput.addEventListener('input', autoSave);
-    elements.subjectInput.addEventListener('input', autoSave);
-    elements.bodyInput.addEventListener('input', autoSave);
-
-    // Template functionality with event delegation
-    document.addEventListener('click', function(e) {
-      if (e.target.closest('.template-chip')) {
-        const chip = e.target.closest('.template-chip');
-        const target = chip.dataset.target;
-        const template = chip.dataset.template;
-        
-        if (target === 'subject') {
-          elements.subjectInput.value = template;
-        } else if (target === 'body') {
-          elements.bodyInput.value = template.replace(/&#10;/g, '\n');
-        }
-        updateCharacterCount();
-      }
-      
-      if (e.target.closest('[data-template-subject]')) {
-        const template = e.target.closest('[data-template-subject]');
-        const subject = template.dataset.templateSubject;
-        const body = template.dataset.templateBody.replace(/&#10;/g, '\n');
-        
-        elements.subjectInput.value = subject;
-        elements.bodyInput.value = body;
-        updateCharacterCount();
-        
-        showAlert('Template applied successfully!');
-      }
-    });
-
-    // Custom template management with localStorage persistence
-    function loadCustomTemplates() {
-      const customTemplates = JSON.parse(localStorage.getItem('customTemplates') || '[]');
-      
-      // Remove existing custom templates from DOM
-      const existingCustom = elements.templatesContainer.querySelectorAll('.custom-template');
-      existingCustom.forEach(template => template.remove());
-      
-      // Add custom templates (limit to 2)
-      customTemplates.slice(0, 2).forEach(template => {
-        const templateElement = document.createElement('div');
-        templateElement.className = 'border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:border-blue-300 dark:hover:border-blue-700 transition-all cursor-pointer custom-template';
-        templateElement.setAttribute('data-template-subject', template.subject);
-        templateElement.setAttribute('data-template-body', template.body);
-        
-        templateElement.innerHTML = `
-          <div class="flex justify-between items-start mb-2">
-            <h5 class="font-medium text-gray-800 dark:text-gray-200">${template.name}</h5>
-            <div class="flex items-center gap-2">
-              <span class="text-xs bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300 px-2 py-0.5 rounded">${template.category}</span>
-              <button class="delete-template text-red-500 hover:text-red-700 text-xs" data-template-id="${template.id}">
-                <i class="ri-delete-bin-line"></i>
-              </button>
-            </div>
-          </div>
-          <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 line-clamp-2">Custom template created by you</p>
-          <button class="text-xs text-blue-500 hover:text-blue-700 dark:hover:text-blue-300 flex items-center">
-            <i class="ri-add-line mr-1"></i> Use Template
-          </button>
-        `;
-        
-        elements.templatesContainer.appendChild(templateElement);
-      });
-    }
-
-    // Delete custom template functionality
-    document.addEventListener('click', function(e) {
-      if (e.target.closest('.delete-template')) {
-        e.stopPropagation();
-        const templateId = e.target.closest('.delete-template').dataset.templateId;
-        
-        if (confirm('Are you sure you want to delete this template?')) {
-          let customTemplates = JSON.parse(localStorage.getItem('customTemplates') || '[]');
-          customTemplates = customTemplates.filter(template => template.id != templateId);
-          localStorage.setItem('customTemplates', JSON.stringify(customTemplates));
-          
-          loadCustomTemplates();
-          showAlert('Template deleted successfully!');
-        }
-      }
-    });
-
-    // Load custom templates on page load
-    loadCustomTemplates();
-
-    // Scheduling functionality
-    elements.scheduleToggle.addEventListener('change', function() {
-      if (this.checked) {
-        elements.schedulingOptions.classList.remove('hidden');
-        isScheduled = true;
-      } else {
-        elements.schedulingOptions.classList.add('hidden');
-        isScheduled = false;
-        if (scheduleTimeout) {
-          clearTimeout(scheduleTimeout);
-          scheduleTimeout = null;
-        }
-      }
-    });
-
-    // Optimized filter functionality
-    function setActiveFilter(filter) {
-      currentFilter = filter;
-      
-      // Update button styles efficiently
-      [elements.filterAll, elements.filterSent, elements.filterPending].forEach(btn => {
-        btn.classList.remove('bg-blue-100', 'text-blue-700', 'dark:bg-blue-900/30', 'dark:text-blue-300');
-        btn.classList.add('bg-gray-100', 'text-gray-700', 'dark:bg-gray-700', 'dark:text-gray-300');
-      });
-      
-      const activeBtn = filter === 'all' ? elements.filterAll : filter === 'sent' ? elements.filterSent : elements.filterPending;
-      activeBtn.classList.remove('bg-gray-100', 'text-gray-700', 'dark:bg-gray-700', 'dark:text-gray-300');
-      activeBtn.classList.add('bg-blue-100', 'text-blue-700', 'dark:bg-blue-900/30', 'dark:text-blue-300');
-      
-      applyEmailFilter();
-    }
-
-    elements.filterAll.addEventListener('click', () => setActiveFilter('all'));
-    elements.filterSent.addEventListener('click', () => setActiveFilter('sent'));
-    elements.filterPending.addEventListener('click', () => setActiveFilter('pending'));
-
-    function applyEmailFilter() {
-      const emailLinks = document.querySelectorAll('#generatedLinks a');
-      
-      emailLinks.forEach(link => {
-        const email = link.textContent.split('. ')[1];
-        const isSent = clickedEmails.has(email);
-        
-        let shouldShow = true;
-        if (currentFilter === 'sent' && !isSent) shouldShow = false;
-        if (currentFilter === 'pending' && isSent) shouldShow = false;
-        
-        link.style.display = shouldShow ? 'block' : 'none';
-      });
-    }
-
-    // Optimized form submission with faster processing
-    elements.emailForm.addEventListener('submit', function (event) {
-      event.preventDefault();
-
-      const recipients = elements.recipientsInput.value.split('\n');
-      const subjectTemplate = elements.subjectInput.value;
-      const bodyTemplate = elements.bodyInput.value;
-      
-      if (isScheduled) {
-        const scheduleDateTime = new Date(`${elements.scheduleDate.value}T${elements.scheduleTime.value}`);
-        const now = new Date();
-        
-        if (scheduleDateTime <= now) {
-          showAlert('Please select a future date and time for scheduling.', 'error');
-          return;
-        }
-        
-        const delay = scheduleDateTime.getTime() - now.getTime();
-        showAlert(`Emails scheduled for ${scheduleDateTime.toLocaleString()}`, 'success');
-        
-        scheduleTimeout = setTimeout(() => {
-          processEmails(recipients, subjectTemplate, bodyTemplate);
-        }, delay);
-        
-        return;
-      }
-      
-      processEmails(recipients, subjectTemplate, bodyTemplate);
-    });
-
-    // Highly optimized email processing function
-    function processEmails(recipients, subjectTemplate, bodyTemplate) {
-      const submitBtn = elements.emailForm.querySelector('button[type="submit"]');
-      const originalBtnText = submitBtn.innerHTML;
-      submitBtn.innerHTML = '<i class="ri-loader-4-line animate-spin"></i> Processing...';
-      submitBtn.disabled = true;
-      
-      // Faster progress indicator
-      const progressContainer = document.createElement('div');
-      progressContainer.className = 'mt-4 bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden';
-      progressContainer.innerHTML = '<div id="emailProgress" class="bg-green-500 h-2.5 rounded-full transition-all duration-100" style="width: 0%"></div>';
-      submitBtn.parentNode.appendChild(progressContainer);
-      
-      const progressBar = document.getElementById('emailProgress');
-      
-      // Clear previous links with optimized DOM manipulation
-      const mailtoLinksDiv = document.getElementById('generatedLinks');
-      mailtoLinksDiv.innerHTML = '';
-      allGeneratedEmails = [];
-      
-      elements.mailtoLinks.classList.remove('hidden');
-      elements.emptyState.classList.add('hidden');
-      
-      // Optimized batch processing with larger batches for better performance
-      const batchSize = 500; // Increased batch size for faster processing
-      const totalEmails = recipients.filter(r => r.trim()).length;
-      let processedCount = 0;
-
-      updateCounters();
-
-      // Optimized worker code with faster name extraction
-      const workerCode = `
-        function extractNameFromEmail(email) {
-          if (!email || !email.includes('@')) return 'there';
-          
-          const commonFirstNames = [
-            'john', 'jane', 'david', 'mary', 'james', 'linda', 'robert', 'michael', 'sarah', 'william', 
-            'patricia', 'joseph', 'jennifer', 'thomas', 'elizabeth', 'charles', 'susan', 'daniel', 'margaret',
-            'matthew', 'emma', 'anthony', 'olivia', 'mark', 'emily', 'paul', 'sophia', 'steven', 'ava', 
-            'andrew', 'isabella', 'joshua', 'mia', 'kenneth', 'charlotte', 'kevin', 'amelia', 'brian', 'harper',
-            'george', 'evelyn', 'timothy', 'anna', 'ronald', 'hannah', 'jason', 'leah', 'edward', 'scarlett',
-            'jeffrey', 'grace', 'ryan', 'lily', 'jacob', 'madison', 'gary', 'layla', 'nicholas', 'zoey',
-            'eric', 'camila', 'adam', 'abigail', 'amanda', 'riley', 'jonathan', 'zoe', 'justin', 'chloe',
-            'scott', 'penelope', 'brandon', 'hazel', 'frank', 'violet', 'benjamin', 'victoria', 'gregory',
-            'peter', 'jack', 'nathan', 'ali', 'stephen', 'dennis', 'joshua', 'tyler', 'aaron', 'henry',
-            'douglas', 'jose', 'peter', 'adam', 'zachary', 'walter', 'jerry', 'patrick', 'noah', 'amy',
-            'michelle', 'kimberly', 'deborah', 'judy', 'lisa', 'sandra', 'ashley', 'donna', 'carol',
-            'jessica', 'nancy', 'karen', 'betty', 'helen', 'dorothy', 'sharon', 'ruth', 'angela', 'melissa',
-            'diane', 'alice', 'marie', 'ann', 'catherine', 'laura', 'rebecca', 'joyce', 'rachel', 'tina',
-            'sara', 'andrea', 'nicole', 'janet', 'julia', 'sophia', 'ethan', 'mason', 'liam', 'oliver',
-            'elijah', 'logan', 'lucas', 'carter', 'isaac', 'gabriel', 'owen', 'chike', 'ayo', 'tunde',
-            'amina', 'fatima', 'kemi', 'tosin', 'adebola', 'chijioke', 'ugochi', 'khalid', 'agatha', 'lola',
-            'emma', 'janelle', 'mahatma', 'nucture', 'peace'
-          ];
-          
-          const nonPersonalPrefixes = [
-            'info', 'infos', 'contact', 'contacts', 'support', 'mail', 'hello', 'help', 'enquiries', 
-            'enquiry', 'inquiry', 'inquiries', 'store', 'sales', 'kontact', 'hi', 'official', 'service', 
-            'contacto', 'admin', 'hey', 'orders', 'customercare', 'customer', 'returns', 'shop', 'delivery', 
-            'kontakt', 'www', 'team', 'business', 'customers', 'chat', 'marketing', 'noreply', 'no-reply',
-            'newsletter', 'billing', 'account', 'careers', 'webmaster', 'media', 'press', 'hr', 'jobs',
-            'helpdesk', 'feedback', 'care', 'office', 'reception', 'assist', 'concierge', 'desk', 'general',
-            'postmaster', 'automation', 'autoresponder', 'donotreply', 'no_reply', 'notifications', 'alerts',
-            'system', 'mailer', 'subscription', 'subscribe', 'unsubscribe', 'payments', 'invoice', 'order',
-            'shipping', 'dispatch', 'reservations', 'bookings', 'membership', 'services', 'automated', 'bot',
-            'do-not-reply', 'do_not_reply', 'donot_reply', 'donot-reply', 'noreply', 'webinfo', 'infomail', 'suporte', 'soporte', 'contato', 'hola', 'boutique', 'bonjour', 'suport', 'regard', 'studios'
-          ];
-          
-          const specialDomainTerms = ['store', 'team', 'elegance', 'shop', 'beauty', 'tech', 'studio', 'lab', 'labs'];
-          
-          let emailParts = email.split('@');
-          let namePart = emailParts[0];
-          const domainPart = emailParts[1] ? emailParts[1].split('.')[0] : '';
-          
-          if (domainPart && nonPersonalPrefixes.includes(namePart.toLowerCase())) {
-            return domainPart.charAt(0).toUpperCase() + domainPart.slice(1);
-          }
-          
-          if (!namePart.includes('.') && !namePart.includes('_') && !namePart.includes('-')) {
-            for (const prefix of nonPersonalPrefixes) {
-              if (namePart.toLowerCase().startsWith(prefix)) {
-                namePart = namePart.slice(prefix.length);
-                break;
-              }
-            }
-            
-            for (const firstName of commonFirstNames) {
-              if (namePart.toLowerCase().startsWith(firstName) && 
-                  firstName !== namePart.toLowerCase() && 
-                  firstName.length >= 3) {
-                return firstName.charAt(0).toUpperCase() + firstName.slice(1);
-              }
-            }
-          }
-          
-          let nameParts = [];
-          if (namePart.includes('.')) {
-            nameParts = namePart.split('.');
-          } else if (namePart.includes('_')) {
-            nameParts = namePart.split('_');
-          } else if (namePart.includes('-')) {
-            nameParts = namePart.split('-');
-          } else {
-            nameParts = [namePart];
-          }
-          
-          if (nameParts.length > 0 && nonPersonalPrefixes.includes(nameParts[0].toLowerCase())) {
-            nameParts.shift();
-          }
-          
-          if (nameParts.length > 1 && 
-              nameParts[0].length < 4 && 
-              !['hi', 'hey', 'www'].includes(nameParts[0].toLowerCase())) {
-            // Keep both parts
-          } else if (nameParts.length > 1) {
-            nameParts = [nameParts[0]];
-          }
-          
-          if (nameParts.length === 0 || nonPersonalPrefixes.includes(nameParts[0].toLowerCase())) {
-            const capitalizedDomain = domainPart.charAt(0).toUpperCase() + domainPart.slice(1);
-            return capitalizedDomain;
-          }
-          
-          let formattedName = '';
-          if (nameParts.length > 1 && specialDomainTerms.includes(nameParts[1].toLowerCase())) {
-            formattedName = nameParts.map(part => {
-              const cleanPart = part.replace(/\\d+$/, '');
-              return cleanPart.charAt(0).toUpperCase() + cleanPart.slice(1);
-            }).join(' ');
-          } else {
-            formattedName = nameParts.map(part => {
-              const cleanPart = part.replace(/\\d+$/, '');
-              return cleanPart.charAt(0).toUpperCase() + cleanPart.slice(1);
-            }).join(' ');
-          }
-          
-          return formattedName || domainPart.charAt(0).toUpperCase() + domainPart.slice(1) || 'there';
-        }
-        
-        function personalizeContent(template, name) {
-          return template.replace(/{name}/g, name);
-        }
-
-        self.onmessage = function(e) {
-          const { emails, subjectTemplate, bodyTemplate, startIndex } = e.data;
-          
-          const results = emails.map((email, idx) => {
-            const trimmedEmail = email.trim();
-            if (!trimmedEmail) return null;
-            
-            const name = extractNameFromEmail(trimmedEmail);
-            const personalizedSubject = encodeURIComponent(personalizeContent(subjectTemplate, name));
-            const personalizedBody = encodeURIComponent(personalizeContent(bodyTemplate, name));
-            
-            const mailtoLink = \`mailto:\${trimmedEmail}?subject=\${personalizedSubject}&body=\${personalizedBody}\`;
-            const gmailWeb = \`https://mail.google.com/mail/?view=cm&to=\${encodeURIComponent(trimmedEmail)}&su=\${personalizedSubject}&body=\${personalizedBody}\`;
-            const gmailApp = \`googlegmail://co?to=\${encodeURIComponent(trimmedEmail)}&subject=\${personalizedSubject}&body=\${personalizedBody}\`;
-
-            return {
-              email: trimmedEmail,
-              mailto: mailtoLink,
-              gmailWeb: gmailWeb,
-              gmailApp: gmailApp,
-              subject: personalizedSubject,
-              body: personalizedBody,
-              index: startIndex + idx
-            };
-          }).filter(item => item !== null);
-          
-          self.postMessage(results);
-        }
-      `;
-      
-      const worker = new Worker(URL.createObjectURL(new Blob([workerCode], {type: 'text/javascript'})));
-      
-      let currentBatch = 0;
-      
-      function processBatch() {
-        const start = currentBatch * batchSize;
-        const end = Math.min(start + batchSize, recipients.length);
-        const batch = recipients.slice(start, end);
-        
-        if (batch.length === 0) {
-          finishProcessing();
-          return;
-        }
-        
-        worker.postMessage({
-          emails: batch,
-          subjectTemplate,
-          bodyTemplate,
-          startIndex: start
-        });
-        
-        currentBatch++;
-      }
-
-      function openEmail(result) {
-        const ua = navigator.userAgent || '';
-        const isAndroid = /Android/i.test(ua);
-        const isIOS = /iPhone|iPad|iPod/i.test(ua);
-        const isChrome = /Chrome/i.test(ua) && !/Edg|OPR|SamsungBrowser/i.test(ua);
-
-        const mailto = result.mailto; // already built by worker
-        const gmailWeb = result.gmailWeb;
-        const gmailApp = result.gmailApp;
-
-        // Manage a cancellable fallback so we don't open two apps if the native app opens
-        let fallbackTimer = null;
-        function clearFallback() {
-          if (fallbackTimer) {
-            clearTimeout(fallbackTimer);
-            fallbackTimer = null;
-          }
-          document.removeEventListener('visibilitychange', onVisibilityChange);
-          window.removeEventListener('pagehide', clearFallback);
-          window.removeEventListener('blur', clearFallback);
-        }
-
-        function onVisibilityChange() {
-          if (document.hidden) {
-            // User left the page (native app likely opened) — cancel fallback
-            clearFallback();
-          }
-        }
-
-        function scheduleFallback() {
-          // If native app doesn't open, fallback to mailto after timeout
-          fallbackTimer = setTimeout(() => {
-            try { window.location.href = mailto; } catch (e) { window.open(mailto, '_blank'); }
-            fallbackTimer = null;
-          }, 800);
-
-          document.addEventListener('visibilitychange', onVisibilityChange);
-          window.addEventListener('pagehide', clearFallback);
-          window.addEventListener('blur', clearFallback);
-        }
-
-        if (isAndroid && isChrome) {
-          // Use Android Intent URI which is more reliable in Chrome on Android
-          const intentUri = `intent://compose?to=${encodeURIComponent(result.email)}&subject=${result.subject}&body=${result.body}#Intent;package=com.google.android.gm;scheme=mailto;end`;
-          try { window.location.href = intentUri; } catch (e) { /* ignore */ }
-          scheduleFallback();
-        } else if (isIOS) {
-          // Try Gmail app scheme on iOS, then fallback to mailto
-          try { window.location.href = gmailApp; } catch (e) { /* ignore */ }
-          scheduleFallback();
-        } else if (isAndroid) {
-          // Non-Chrome Android browsers: try app scheme first
-          try { window.location.href = gmailApp; } catch (e) { /* ignore */ }
-          scheduleFallback();
-        } else {
-          // Desktop: open Gmail web compose in new tab, else mailto
-          try { window.open(gmailWeb || mailto, '_blank'); } catch (e) { window.open(mailto, '_blank'); }
-        }
-      }
-      
-      worker.onmessage = function(e) {
-        const results = e.data;
-        
-        // Optimized DOM updates using DocumentFragment
-        const fragment = document.createDocumentFragment();
-        
-        results.forEach(result => {
-          const linkElement = document.createElement('a');
-          linkElement.href = result.mailto;
-          linkElement.className = 'email-link text-green-500 hover:underline block';
-          linkElement.innerText = `${result.index + 1}. ${result.email}`;
-          linkElement.target = "_blank";
-          
-          if (clickedEmails.has(result.email)) {
-            linkElement.style.color = 'orange';
-          }
-          
-          // Optimized click handler with immediate response
-          linkElement.addEventListener('click', function (event) {
-            event.preventDefault();
-            
-            if (clickedEmails.has(result.email)) {
-              showAlert(`The email address "${result.email}" has already been clicked.`, 'warning');
-            } else {
-              // Immediate visual feedback
-              linkElement.style.color = 'orange';
-              
-              clickedEmails.add(result.email);
-              localStorage.setItem('clickedEmails', JSON.stringify([...clickedEmails]));
-
-              // Record sent event with timestamp for 24h metric
-              try {
-                sentHistory = JSON.parse(localStorage.getItem('sentHistory') || '[]');
-              } catch (e) {
-                sentHistory = [];
-              }
-              sentHistory.push({ email: result.email, ts: Date.now() });
-              localStorage.setItem('sentHistory', JSON.stringify(sentHistory));
-              update24hSentCount();
-
-              // Open email client (try Gmail app on mobile first)
-              openEmail(result);
-              
-              // Update counters asynchronously
-              requestAnimationFrame(() => {
-                updateCounters();
-                updateAnalytics();
-              });
-              
-              // Celebration milestones
-              if (clickedEmails.size % 100 === 0) {
-                confetti({
-                  particleCount: 100,
-                  spread: 70,
-                  origin: { y: 0.6 }
-                });
-                
-                showAlert("You're on a roll today! 🎉 " + clickedEmails.size + " emails sent!");
-              }
-            }
-            
-            applyEmailFilter();
-          });
-          
-          fragment.appendChild(linkElement);
-          allGeneratedEmails.push(result);
-        });
-        
-        mailtoLinksDiv.appendChild(fragment);
-        
-        // Update domain stats
-        results.forEach(result => {
-          const domain = result.email.split('@')[1];
-          domainStats[domain] = (domainStats[domain] || 0) + 1;
-        });
-        
-        // Optimized progress update
-        processedCount += results.length;
-        const progressPercent = Math.min((processedCount / totalEmails) * 100, 100);
-        progressBar.style.width = `${progressPercent}%`;
-        
-        // Continue processing or finish
-        if (currentBatch * batchSize < recipients.length) {
-          // Use requestAnimationFrame for smoother UI updates
-          requestAnimationFrame(processBatch);
-        } else {
-          finishProcessing();
-        }
-      };
-      
-      function finishProcessing() {
-        worker.terminate();
-        
-        // Faster cleanup with immediate response
-        submitBtn.innerHTML = originalBtnText;
-        submitBtn.disabled = false;
-        
-        // Quick progress bar removal
-        setTimeout(() => {
-          if (progressContainer.parentNode) {
-            progressContainer.remove();
-          }
-        }, 300); // Reduced from 1000ms to 300ms
-        
-        // Batch update all counters and analytics
-        requestAnimationFrame(() => {
-          updateCounters();
-          updateAnalytics();
-          updateDomainStats();
-        });
-        
-        showAlert(`Successfully generated ${processedCount} email links!`);
-      }
-      
-      // Start processing
-      processBatch();
-    }
-
-    // Optimized counter updates
-    function updateCounters() {
-      const total = allGeneratedEmails.length;
-      const sent = clickedEmails.size;
-      const remaining = total - sent;
-      
-      // Batch DOM updates
-      requestAnimationFrame(() => {
-        document.getElementById('totalCounter').textContent = total;
-        document.getElementById('sentCounter').textContent = sent;
-        document.getElementById('remainingCounter').textContent = remaining;
-        document.getElementById('headerSentCount').textContent = sent;
-        document.getElementById('headerRemainingCount').textContent = remaining;
-        
-        const progress = total > 0 ? (sent / total) * 100 : 0;
-        document.getElementById('campaignProgress').style.width = `${progress}%`;
-        document.getElementById('campaignProgressText').textContent = `${Math.round(progress)}% Complete`;
-      });
-    }
-
-    // Optimized analytics updates
-    function updateAnalytics() {
-      const total = allGeneratedEmails.length;
-      const sent = clickedEmails.size;
-      const remaining = total - sent;
-      
-      if (total > 0) {
-        const sentPercent = (sent / total) * 100;
-        const remainingPercent = (remaining / total) * 100;
-        
-        requestAnimationFrame(() => {
-          document.getElementById('sentChart').style.height = `${sentPercent}%`;
-          document.getElementById('remainingChart').style.height = `${remainingPercent}%`;
-        });
-      }
-    }
-
-    // Optimized domain stats
-    function updateDomainStats() {
-      const domainStatsContainer = document.getElementById('domainStats');
-      
-      const sortedDomains = Object.entries(domainStats)
-        .sort(([,a], [,b]) => b - a)
-        .slice(0, 5);
-      
-      if (sortedDomains.length === 0) {
-        domainStatsContainer.innerHTML = '<div class="flex items-center justify-between text-xs"><span class="text-gray-600 dark:text-gray-400">No data available</span></div>';
-        return;
-      }
-      
-      const fragment = document.createDocumentFragment();
-      sortedDomains.forEach(([domain, count]) => {
-        const domainElement = document.createElement('div');
-        domainElement.className = 'flex items-center justify-between text-xs';
-        domainElement.innerHTML = `
-          <span class="text-gray-700 dark:text-gray-300">${domain}</span>
-          <span class="font-medium text-blue-500">${count}</span>
-        `;
-        fragment.appendChild(domainElement);
-      });
-      
-      domainStatsContainer.innerHTML = '';
-      domainStatsContainer.appendChild(fragment);
-    }
-
-    // Update and prune sentHistory for 24-hour sent metric
-    function update24hSentCount() {
-      try {
-        sentHistory = JSON.parse(localStorage.getItem('sentHistory') || '[]');
-      } catch (err) {
-        sentHistory = [];
-      }
-
-      const now = Date.now();
-      const threshold = now - 24 * 60 * 60 * 1000; // 24 hours
-
-      // Keep only entries within last 24 hours
-      const recent = sentHistory.filter(item => item && item.ts && item.ts >= threshold);
-      // Persist pruned list
-      localStorage.setItem('sentHistory', JSON.stringify(recent));
-      sentHistory = recent;
-
-      // Update UI
-      const el = document.getElementById('sent24hCounter');
-      if (el) el.textContent = String(recent.length || 0);
-    }
-
-    // Periodically prune and update 24h count every minute
-    setInterval(update24hSentCount, 60 * 1000);
-
-    // Optimized search with better debouncing
-    function debounce(func, delay) {
-      let timeout;
-      return function (...args) {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func.apply(this, args), delay);
-      };
-    }
-
-    const performSearch = debounce(function (query) {
-      const emailLinks = document.querySelectorAll('#generatedLinks a');
-      const lowerQuery = query.toLowerCase();
-      let foundAny = false;
-
-      emailLinks.forEach(link => {
-        const text = link.innerText.toLowerCase();
-        const match = text.includes(lowerQuery);
-        foundAny = foundAny || match;
-        
-        const email = link.textContent.split('. ')[1];
-        const isSent = clickedEmails.has(email);
-        
-        let shouldShow = match;
-        if (currentFilter === 'sent' && !isSent) shouldShow = false;
-        if (currentFilter === 'pending' && isSent) shouldShow = false;
-        
-        link.style.display = shouldShow ? 'block' : 'none';
-        link.style.backgroundColor = match && lowerQuery ? 'rgba(74, 222, 128, 0.1)' : '';
-      });
-
-      elements.searchAlert.classList.toggle('hidden', foundAny || !lowerQuery);
-    }, 150); // Reduced debounce time
-
-    elements.emailSearch.addEventListener('input', function () {
-      performSearch(this.value);
-    });
-
-    // Optimized notification system
-    function showAlert(message, type = 'success') {
-      const alertBox = document.createElement('div');
-      
-      let bgColor = 'bg-green-500';
-      let icon = 'ri-check-line';
-      
-      if (type === 'error') {
-        bgColor = 'bg-red-500';
-        icon = 'ri-error-warning-line';
-      } else if (type === 'warning') {
-        bgColor = 'bg-yellow-500';
-        icon = 'ri-alert-line';
-      }
-      
-      alertBox.className = `alert-box fixed top-5 right-5 left-5 ${bgColor} text-white py-3 px-4 rounded-lg shadow-lg transform transition-all opacity-0 animate-fadeIn z-50`;
-      alertBox.innerHTML = `
-        <div class="flex items-center space-x-2">
-          <i class="${icon}"></i>
-          <span>${message}</span>
-        </div>
-      `;
-
-      document.body.appendChild(alertBox);
-
-      // Faster animations
-      requestAnimationFrame(() => {
-        alertBox.classList.remove('opacity-0');
-        alertBox.classList.add('opacity-100');
-      });
-
-      setTimeout(() => {
-        alertBox.classList.add('opacity-0');
-        setTimeout(() => {
-          if (alertBox.parentNode) {
-            alertBox.remove();
-          }
-        }, 200);
-      }, 2500); // Reduced display time
-    }
-
-    // Optimized file upload
-    document.getElementById('csvUpload').addEventListener('change', function () {
-      const fileInput = this;
-      const fileNameDisplay = document.getElementById('fileName');
-      
-      if (fileInput.files.length > 0) {
-        fileNameDisplay.textContent = fileInput.files[0].name;
-      } else {
-        fileNameDisplay.textContent = "No file selected";
-      }
-    });
-
-    document.getElementById('uploadCSV').addEventListener('click', function() {
+      const recipientsEl = document.getElementById('recipients');
+      const validEl = document.getElementById('validEmails');
+      const invalidEl = document.getElementById('invalidEmails');
+      const totalEl = document.getElementById('totalEmails');
       const fileInput = document.getElementById('csvUpload');
-      const file = fileInput.files[0];
-      
-      if (!file) {
-        showAlert('Please select a file to upload.', 'error');
-        return;
+      const fileNameEl = document.getElementById('fileName');
+      const uploadBtn = document.getElementById('uploadCSV');
+      const emailActionsBtn = document.getElementById('emailActionsBtn');
+      const emailActionsMenu = document.getElementById('emailActionsMenu');
+      const copyEmailsBtn = document.getElementById('copyEmails');
+      const exportAllBtn = document.getElementById('exportAll');
+      const exportRemainingBtn = document.getElementById('exportRemaining');
+      const clearHistoryBtn = document.getElementById('clearHistory');
+      const addTemplateBtn = document.getElementById('addTemplateBtn');
+      const templateModal = document.getElementById('templateModal');
+      const closeTemplateModal = document.getElementById('closeTemplateModal');
+      const cancelTemplateModal = document.getElementById('cancelTemplateModal');
+      const saveTemplateBtn = document.getElementById('saveTemplateBtn');
+      const templateNameInput = document.getElementById('templateName');
+      const templateSubjectInput = document.getElementById('templateSubject');
+      const templateBodyInput = document.getElementById('templateBody');
+      const scrollTopBtn = document.getElementById('scrollTopBtn');
+      const scrollToFormBtn = document.getElementById('scrollToForm');
+
+      function parseEmails(text) {
+        return String(text || '')
+          .split(/[\n\r,;]+/)
+          .map(item => item.trim())
+          .filter(Boolean);
       }
-      
-      const fileExtension = file.name.split('.').pop().toLowerCase();
-      if (fileExtension !== 'csv' && fileExtension !== 'txt') {
-        showAlert('Please upload a valid .csv or .txt file.', 'error');
-        return;
+
+      function normalizeEmail(email) {
+        return String(email || '').replace(/^["']|["']$/g, '').trim();
       }
-      
-      const uploadBtn = this;
-      const originalBtnText = uploadBtn.innerHTML;
-      uploadBtn.innerHTML = '<i class="ri-loader-4-line animate-spin"></i> Processing...';
-      uploadBtn.disabled = true;
-      
-      const progressContainer = document.createElement('div');
-      progressContainer.className = 'mt-4 bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden';
-      progressContainer.innerHTML = '<div id="uploadProgress" class="bg-green-500 h-2.5 rounded-full transition-all duration-100" style="width: 0%"></div>';
-      uploadBtn.parentNode.appendChild(progressContainer);
-      
-      const progressBar = document.getElementById('uploadProgress');
-      
-      const reader = new FileReader();
-      reader.onload = function(event) {
-        const contents = event.target.result;
-        
-        const worker = new Worker(URL.createObjectURL(new Blob([`
-          self.onmessage = function(e) {
-            const contents = e.data;
-            const emailPattern = /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,})/g;
-            const emailList = [];
-            let match;
-            
-            while ((match = emailPattern.exec(contents)) !== null) {
-              emailList.push(match[0]);
-              
-              if (emailList.length % 1000 === 0) {
-                self.postMessage({
-                  type: 'progress',
-                  count: emailList.length
-                });
-              }
-            }
-            
-            self.postMessage({
-              type: 'complete',
-              emailList: emailList
-            });
-          }
-        `], {type: 'text/javascript'})));
-        
-        worker.onmessage = function(e) {
-          const data = e.data;
-          
-          if (data.type === 'progress') {
-            const progressPercent = Math.min((data.count / 10000) * 100, 90);
-            progressBar.style.width = `${progressPercent}%`;
-          } else if (data.type === 'complete') {
-            const emailList = data.emailList;
-            
-            if (emailList.length > 0) {
-              elements.recipientsInput.value = emailList.slice(0, 20000).join('\n');
-              elements.recipientsInput.dispatchEvent(new Event('input'));
-              showAlert(`Successfully extracted ${emailList.length} email addresses.`);
-            } else {
-              showAlert('No valid email addresses found in the file.', 'error');
-            }
-            
-            progressBar.style.width = '100%';
-            
-            setTimeout(() => {
-              uploadBtn.innerHTML = originalBtnText;
-              uploadBtn.disabled = false;
-              progressContainer.remove();
-              worker.terminate();
-            }, 300); // Faster cleanup
-          }
-        };
-        
-        worker.postMessage(contents);
-      };
-      
-      reader.readAsText(file);
-    });
 
-    // Optimized theme management
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    const themeMenu = document.getElementById('themeMenu');
-    const darkIcon = document.getElementById('darkIcon');
-    const lightIcon = document.getElementById('lightIcon');
-
-    function applyTheme(theme) {
-      if (theme === 'dark') {
-        document.documentElement.classList.add('dark');
-        document.body.classList.add('dark-custom-bg', 'text-white');
-        darkIcon.classList.remove('hidden');
-        lightIcon.classList.add('hidden');
-      } else if (theme === 'light') {
-        document.documentElement.classList.remove('dark');
-        document.body.classList.remove('dark-custom-bg', 'text-white');
-        darkIcon.classList.add('hidden');
-        lightIcon.classList.remove('hidden');
-      } else {
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        applyTheme(prefersDark ? 'dark' : 'light');
-      }
-    }
-
-    function saveTheme(theme) {
-      localStorage.setItem('theme', theme);
-    }
-
-    function loadTheme() {
-      const savedTheme = localStorage.getItem('theme') || 'system';
-      applyTheme(savedTheme);
-    }
-
-    darkModeToggle.addEventListener('click', () => {
-      const isVisible = themeMenu.classList.contains('opacity-100');
-      themeMenu.classList.toggle('opacity-100', !isVisible);
-      themeMenu.classList.toggle('invisible', isVisible);
-    });
-
-    themeMenu.addEventListener('click', (e) => {
-      const selectedTheme = e.target.closest('[data-theme]')?.getAttribute('data-theme');
-      if (selectedTheme) {
-        saveTheme(selectedTheme);
-        applyTheme(selectedTheme);
-        themeMenu.classList.add('invisible');
-        themeMenu.classList.remove('opacity-100');
-      }
-    });
-
-    loadTheme();
-
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme === 'system') {
-        applyTheme('system');
-      }
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('#darkModeToggle') && !e.target.closest('#themeMenu')) {
-        themeMenu.classList.add('invisible');
-        themeMenu.classList.remove('opacity-100');
-      }
-    });
-
-    // Email actions menu
-    elements.emailActionsBtn.addEventListener('click', function() {
-      elements.emailActionsMenu.classList.toggle('hidden');
-    });
-
-    document.addEventListener('click', function(e) {
-      if (!elements.emailActionsBtn.contains(e.target) && !elements.emailActionsMenu.contains(e.target)) {
-        elements.emailActionsMenu.classList.add('hidden');
-      }
-    });
-
-    // Wire visible clear button to the same clear history handler (delegates to dropdown clear)
-    const visibleClearBtn = document.getElementById('clearHistoryBtn');
-    if (visibleClearBtn) {
-      visibleClearBtn.addEventListener('click', function() {
-        const hiddenClear = document.getElementById('clearHistory');
-        if (hiddenClear) hiddenClear.click();
-      });
-    }
-
-    // Optimized action button functionality
-    document.getElementById('clearHistory').addEventListener('click', function() {
-      if (confirm('Are you sure you want to clear your sent email history?')) {
-        localStorage.removeItem('clickedEmails');
-        clickedEmails.clear();
-        // Also clear 24-hour sent history and reset metric
-        localStorage.removeItem('sentHistory');
-        sentHistory = [];
-        update24hSentCount();
-        
-        const emailLinks = document.querySelectorAll('#generatedLinks a');
-        emailLinks.forEach(link => {
-          link.style.color = '';
+      function dedupe(list) {
+        const seen = new Set();
+        return list.filter(item => {
+          const key = normalizeEmail(item).toLowerCase();
+          if (!key || seen.has(key)) return false;
+          seen.add(key);
+          return true;
         });
-        
-        updateCounters();
-        updateAnalytics();
-        showAlert('Sent email history has been cleared!');
-        elements.emailActionsMenu.classList.add('hidden');
       }
-    });
 
-    document.getElementById('copyEmails').addEventListener('click', function() {
-      const emailLinks = document.querySelectorAll('#generatedLinks a');
-      const emails = Array.from(emailLinks).map(link => {
-        return link.innerText.split('. ')[1];
+      function updateStats(list) {
+        const cleanList = dedupe(parseEmails(list));
+        const valid = cleanList.filter(item => EMAIL_RE.test(item)).length;
+        const invalid = cleanList.length - valid;
+        totalEl.textContent = cleanList.length;
+        validEl.textContent = valid;
+        invalidEl.textContent = invalid;
+
+        const headerSent = document.getElementById('headerSentCount');
+        const headerRemaining = document.getElementById('headerRemainingCount');
+        if (headerSent) headerSent.textContent = valid;
+        if (headerRemaining) headerRemaining.textContent = invalid;
+      }
+
+      recipientsEl.addEventListener('input', () => {
+        updateStats(recipientsEl.value);
       });
-      
-      if (emails.length > 0) {
-        navigator.clipboard.writeText(emails.join('\n'))
-          .then(() => {
-            showAlert(`Copied ${emails.length} email addresses to clipboard!`);
-          })
-          .catch(err => {
-            showAlert('Failed to copy emails. Please try again.', 'error');
-          });
-      } else {
-        showAlert('No emails to copy!', 'warning');
-      }
-      elements.emailActionsMenu.classList.add('hidden');
-    });
 
-    function exportEmails(onlySent) {
-      const emailLinks = document.querySelectorAll('#generatedLinks a');
-      const emails = [];
-      
-      emailLinks.forEach(link => {
-        const email = link.innerText.split('. ')[1];
-        const isSent = link.style.color === 'orange';
-        
-        if ((onlySent && isSent) || (!onlySent && !isSent) || onlySent === null) {
-          emails.push(email);
+      fileInput.addEventListener('change', () => {
+        const file = fileInput.files && fileInput.files[0];
+        if (file) fileNameEl.textContent = file.name;
+      });
+
+      const uploadLabel = document.querySelector('.file-upload-btn');
+      if (uploadLabel) {
+        uploadLabel.addEventListener('dragover', (e) => {
+          e.preventDefault();
+          uploadLabel.classList.add('dragover');
+        });
+        uploadLabel.addEventListener('dragleave', () => uploadLabel.classList.remove('dragover'));
+        uploadLabel.addEventListener('drop', (e) => {
+          e.preventDefault();
+          uploadLabel.classList.remove('dragover');
+          const file = e.dataTransfer.files && e.dataTransfer.files[0];
+          if (!file) return;
+          fileInput.files = e.dataTransfer.files;
+          fileNameEl.textContent = file.name;
+        });
+      }
+
+      uploadBtn.addEventListener('click', () => {
+        const file = fileInput.files && fileInput.files[0];
+        if (!file) {
+          alert('Please choose a CSV or TXT file first.');
+          return;
         }
+
+        const reader = new FileReader();
+        reader.onload = function () {
+          const text = String(reader.result || '');
+          const matches = parseEmails(text).filter(item => item.includes('@'));
+          const cleaned = dedupe(matches.map(normalizeEmail));
+          recipientsEl.value = cleaned.join('\n');
+          updateStats(recipientsEl.value);
+          recipientsEl.focus();
+        };
+        reader.readAsText(file);
       });
-      
-      if (emails.length > 0) {
-        const blob = new Blob([emails.join('\n')], { type: 'text/plain' });
+
+      function downloadCSV(filename, rows) {
+        const csv = rows.join('\n');
+        const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = onlySent === null ? 'all-emails.txt' : 
-                    onlySent ? 'sent-emails.txt' : 'remaining-emails.txt';
+        a.download = filename;
         document.body.appendChild(a);
         a.click();
-        document.body.removeChild(a);
+        a.remove();
         URL.revokeObjectURL(url);
-        
-        showAlert(`Exported ${emails.length} email addresses!`);
-      } else {
-        showAlert('No emails to export!', 'warning');
       }
-      elements.emailActionsMenu.classList.add('hidden');
-    }
 
-    document.getElementById('exportAll').addEventListener('click', function() {
-      exportEmails(null);
-    });
-
-    document.getElementById('exportRemaining').addEventListener('click', function() {
-      exportEmails(false);
-    });
-
-    // Optimized scroll functionality
-    let scrollTimeout;
-    window.addEventListener('scroll', function() {
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        elements.scrollTopBtn.classList.toggle('visible', window.pageYOffset > 300);
-      }, 100);
-    });
-
-    elements.scrollTopBtn.addEventListener('click', function() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    document.getElementById('scrollToForm').addEventListener('click', function() {
-      elements.emailForm.scrollIntoView({ behavior: 'smooth' });
-    });
-
-    // Template modal functionality
-    elements.addTemplateBtn.addEventListener('click', function() {
-      const customTemplates = JSON.parse(localStorage.getItem('customTemplates') || '[]');
-      if (customTemplates.length >= 2) {
-        showAlert('You can only create up to 2 custom templates. Delete an existing template to create a new one.', 'warning');
-        return;
+      function getRecipientRows() {
+        return dedupe(parseEmails(recipientsEl.value).map(normalizeEmail).filter(Boolean));
       }
-      elements.templateModal.classList.remove('hidden');
-    });
 
-    elements.closeTemplateModal.addEventListener('click', function() {
-      elements.templateModal.classList.add('hidden');
-    });
-
-    elements.templateModal.addEventListener('click', function(e) {
-      if (e.target === elements.templateModal) {
-        elements.templateModal.classList.add('hidden');
+      if (copyEmailsBtn) {
+        copyEmailsBtn.addEventListener('click', async () => {
+          const data = getRecipientRows().join('\n');
+          try {
+            await navigator.clipboard.writeText(data);
+            alert('Email list copied to clipboard.');
+          } catch (error) {
+            alert('Clipboard access was blocked. Please copy manually.');
+          }
+        });
       }
-    });
 
-    // Fixed custom template saving functionality
-    elements.saveTemplate.addEventListener('click', function() {
-      const name = document.getElementById('templateName').value;
-      const subject = document.getElementById('templateSubject').value;
-      const body = document.getElementById('templateBody').value;
-      const category = document.getElementById('templateCategory').value;
-      
-      if (!name || !subject || !body) {
-        showAlert('Please fill in all template fields.', 'error');
-        return;
+      if (exportAllBtn) {
+        exportAllBtn.addEventListener('click', () => {
+          const rows = getRecipientRows();
+          if (!rows.length) {
+            alert('No emails available to export.');
+            return;
+          }
+          downloadCSV('scouter-all-emails.csv', rows);
+        });
       }
-      
-      // Get existing templates and check limit
-      const templates = JSON.parse(localStorage.getItem('customTemplates') || '[]');
-      if (templates.length >= 2) {
-        showAlert('Maximum of 2 custom templates allowed. Delete an existing template first.', 'error');
-        return;
-      }
-      
-      // Save new template
-      templates.push({ name, subject, body, category, id: Date.now() });
-      localStorage.setItem('customTemplates', JSON.stringify(templates));
-      
-      // Reload templates display
-      loadCustomTemplates();
-      
-      showAlert('Template saved successfully!');
-      elements.templateModal.classList.add('hidden');
-      
-      // Clear form
-      document.getElementById('templateName').value = '';
-      document.getElementById('templateSubject').value = '';
-      document.getElementById('templateBody').value = '';
-    });
 
-    // Initialize everything
-    updateCounters();
-    updateAnalytics();
-    update24hSentCount();
-    elements.recipientsInput.dispatchEvent(new Event('input'));
+      if (exportRemainingBtn) {
+        exportRemainingBtn.addEventListener('click', () => {
+          const rows = getRecipientRows().filter(item => !EMAIL_RE.test(item));
+          if (!rows.length) {
+            alert('No remaining invalid emails to export.');
+            return;
+          }
+          downloadCSV('scouter-remaining-emails.csv', rows);
+        });
+      }
+
+      if (clearHistoryBtn) {
+        clearHistoryBtn.addEventListener('click', () => {
+          const confirmed = window.confirm('Clear the current email list and history?');
+          if (confirmed) {
+            recipientsEl.value = '';
+            updateStats('');
+          }
+        });
+      }
+
+      function openTemplateModal() {
+        templateModal.classList.remove('hidden');
+      }
+
+      function closeTemplateModalFn() {
+        templateModal.classList.add('hidden');
+        templateNameInput.value = '';
+        templateSubjectInput.value = '';
+        templateBodyInput.value = '';
+      }
+
+      if (addTemplateBtn) {
+        addTemplateBtn.addEventListener('click', openTemplateModal);
+      }
+      if (closeTemplateModal) closeTemplateModal.addEventListener('click', closeTemplateModalFn);
+      if (cancelTemplateModal) cancelTemplateModal.addEventListener('click', closeTemplateModalFn);
+
+      function saveCustomTemplate() {
+        const name = templateNameInput.value.trim();
+        const subject = templateSubjectInput.value.trim();
+        const body = templateBodyInput.value.trim();
+
+        if (!name || !subject || !body) {
+          alert('Please complete the template name, subject, and body before saving.');
+          return;
+        }
+
+        const key = 'scouter-custom-templates';
+        try {
+          const existing = JSON.parse(localStorage.getItem(key) || '[]');
+          existing.push({ id: Date.now(), name, subject, body });
+          localStorage.setItem(key, JSON.stringify(existing));
+          closeTemplateModalFn();
+          alert('Template saved locally.');
+        } catch (error) {
+          alert('Could not save template in this browser.');
+        }
+      }
+
+      if (saveTemplateBtn) saveTemplateBtn.addEventListener('click', saveCustomTemplate);
+
+      if (emailActionsBtn && emailActionsMenu) {
+        emailActionsBtn.addEventListener('click', () => {
+          emailActionsMenu.classList.toggle('hidden');
+        });
+
+        document.addEventListener('click', (event) => {
+          if (!emailActionsBtn.contains(event.target) && !emailActionsMenu.contains(event.target)) {
+            emailActionsMenu.classList.add('hidden');
+          }
+        });
+      }
+
+      function addPreviewButton() {
+        const form = document.getElementById('emailForm');
+        if (!form) return;
+
+        const previewButton = document.createElement('button');
+        previewButton.type = 'button';
+        previewButton.className = 'gmail-btn-secondary py-3 px-6 rounded-lg transition-all flex items-center justify-center';
+        previewButton.innerHTML = '<i class="ri-eye-line mr-2"></i>Preview';
+        previewButton.addEventListener('click', () => {
+          const rows = getRecipientRows();
+          const target = rows.find(item => EMAIL_RE.test(item));
+          if (!target) {
+            alert('Add at least one valid email to preview the message.');
+            return;
+          }
+
+          const subject = document.getElementById('subject')?.value || '';
+          const body = document.getElementById('body')?.value || '';
+          const mailtoUrl = `mailto:${encodeURIComponent(target)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+          window.open(mailtoUrl, '_blank');
+        });
+
+        const submitButton = form.querySelector('button[type="submit"]');
+        if (submitButton) {
+          submitButton.parentNode.appendChild(previewButton);
+        }
+      }
+      addPreviewButton();
+
+      if (scrollTopBtn) {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 200) {
+            scrollTopBtn.classList.add('visible');
+          } else {
+            scrollTopBtn.classList.remove('visible');
+          }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      if (scrollToFormBtn) {
+        scrollToFormBtn.addEventListener('click', () => {
+          document.getElementById('emailForm').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+      }
+
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+      updateStats(recipientsEl.value);
+    })();
   </script>
-
-
-<!-- 'It is your responsibility to notify your visitors about cookies used and data collected on your blog. Blogger makes a standard notification available for you to use on your blog, and you can customise it or replace it with your own notice. See http://www.blogger.com/go/cookiechoices for more details.' -->
-<script src="js/cookienotice.js" defer></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function(event) {
-    window.cookieChoices && cookieChoices.showCookieConsentBar && cookieChoices.showCookieConsentBar(
-        (window.cookieOptions && cookieOptions.msg) || 'This site uses cookies from Google to deliver its services and to analyse traffic. Your IP address and user agent are shared with Google, together with performance and security metrics, to ensure quality of service, generate usage statistics and to detect and address abuse.',
-        (window.cookieOptions && cookieOptions.close) || 'Got it',
-        (window.cookieOptions && cookieOptions.learn) || 'Learn more',
-        (window.cookieOptions && cookieOptions.link) || 'https://www.blogger.com/go/blogspot-cookies');
-  });
-</script>
-
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"3c444da3cd804f848f99706ed426dbf6","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
-
-<!-- Mirrored from www.scoutier.com.ng/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Jul 2025 10:55:45 GMT -->
 </html>
